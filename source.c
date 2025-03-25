@@ -7,6 +7,7 @@
 #define maxHistory 10
 
 
+
 typedef struct history{
     int order;
     char url[50];
