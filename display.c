@@ -12,7 +12,8 @@ void xy(int x,int y)
 
 int main()
 {
-    xy(55,13);
+    //xy(55,13);
+    system("COLORS 9E");
     printf("Hello");
     getch();
     return 0;
