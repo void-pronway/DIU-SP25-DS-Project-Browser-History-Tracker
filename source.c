@@ -14,7 +14,7 @@ void searchPage();
 void allHistory();
 void searchHistory();
 void goPrev();
-void goFwrd();
+void goFrwd();
 void loadfromfile();
 void savetofile();
 void start();
@@ -22,7 +22,7 @@ void end();
 void loading();
 void coord(int x, int y);
 void time();
-int continueP();
+int continueP(char *x);
 void box();
 
 //function Prototype for the pages
@@ -47,7 +47,6 @@ int main()
         system("cls");
         homePage();
 
-
         cord(45,12);
         printf(CYN"Do you want go to the HomePage?"reset);
         continueChoice=getch();
@@ -67,10 +66,9 @@ void cord(int x, int y)
 void start()
 {
     system("cls");
-
-
+    box();
     cord(50,13);
-    printf(CYN"Opening ByteSurf.....\n\n"reset);
+    printf(CYN"Opening ByteSurf\n\n"reset);
     cord(25,15);
     for(int loading=0; loading<70; loading++)
     {
@@ -82,12 +80,133 @@ void start()
     }
 }
 
+void end()
+{
+    system("cls");
+    box();
+    cord(50,13);
+    for (int i = 0; i <= 100; i += 10)
+    {
+        printf("\r\t\t\t\t\t      "GRN"Saving surf history...%d%%"reset, i);
+        usleep(200000); //200000 microseconds = 200 milisec = 0.2 sec
+    }
+    system("cls");
+    box();
+    cord(5,14);
+    usleep(300000);
+    printf(CYN"\t\t\t\t\t    T ");
+    usleep(100000);
+    cord(5,14);
+    printf("\t\t\t\t\t    Th ");
+    usleep(100000);
+    cord(5,14);
+    printf("\t\t\t\t\t    Tha ");
+    usleep(100000);
+    cord(5,14);
+    printf("\t\t\t\t\t    Than ");
+    usleep(100000);
+    cord(5,14);
+    printf("\t\t\t\t\t    Thank ");
+    usleep(100000);
+    cord(5,14);
+    printf("\t\t\t\t\t    Thank y ");
+    usleep(100000);
+    cord(5,14);
+    printf("\t\t\t\t\t    Thank yo ");
+    usleep(100000);
+    cord(5,14);
+    printf("\t\t\t\t\t    Thank you ");
+    usleep(100000);
+    cord(5,14);
+    printf("\t\t\t\t\t    Thank you f ");
+    usleep(100000);
+    cord(5,14);
+    printf("\t\t\t\t\t    Thank you fo ");
+    usleep(100000);
+    cord(5,14);
+    printf("\t\t\t\t\t    Thank you for ");
+    usleep(100000);
+    cord(5,14);
+    printf("\t\t\t\t\t    Thank you for c ");
+    usleep(100000);
+    cord(5,14);
+    printf("\t\t\t\t\t    Thank you for ch ");
+    usleep(100000);
+    cord(5,14);
+    printf("\t\t\t\t\t    Thank you for cho ");
+    usleep(100000);
+    cord(5,14);
+    printf("\t\t\t\t\t    Thank you for choo ");
+    usleep(100000);
+    cord(5,14);
+    printf("\t\t\t\t\t    Thank you for choos ");
+    usleep(100000);
+    cord(5,14);
+    printf("\t\t\t\t\t    Thank you for choosi ");
+    usleep(100000);
+    cord(5,14);
+    printf("\t\t\t\t\t    Thank you for choosin ");
+    usleep(100000);
+    cord(5,14);
+    printf("\t\t\t\t\t    Thank you for choosing ");
+    usleep(100000);
+    cord(5,14);
+    printf("\t\t\t\t\t    Thank you for choosing B ");
+    usleep(100000);
+    cord(5,14);
+    printf("\t\t\t\t\t    Thank you for choosing By ");
+    usleep(100000);
+    cord(5,14);
+    printf("\t\t\t\t\t    Thank you for choosing Byt ");
+    usleep(100000);
+    cord(5,14);
+    printf("\t\t\t\t\t    Thank you for choosing Byte ");
+    usleep(100000);
+    cord(5,14);
+    printf("\t\t\t\t\t    Thank you for choosing ByteS ");
+    usleep(100000);
+    cord(5,14);
+    printf("\t\t\t\t\t    Thank you for choosing ByteSu ");
+    usleep(100000);
+    cord(5,14);
+    printf("\t\t\t\t\t    Thank you for choosing ByteSur ");
+    usleep(100000);
+    cord(5,14);
+    printf("\t\t\t\t\t    Thank you for choosing ByteSurf ");
+    usleep(100000);
+    cord(5,14);
+    sleep(1);
+
+
+    int dotCount = 5;
+    int loopCount = 2;
+
+    for (int loop = 0; loop < loopCount; loop++)
+    {
+        for (int i = 0; i <= dotCount; i++)
+        {
+            cord(53,15);
+            printf(RED"Shuting Down"reset);
+            for (int j = 0; j < i; j++)
+            {
+                printf(RED"."reset);
+            }
+
+            Sleep(300);
+        }
+        cord(53,15);
+        printf(RED"Shuting Down"reset"      ");
+        Sleep(300);
+    }
+    system("cls");
+}
+
 void loadFromFile()
 {
 
 }
 
-void box()
+void box()//inside width 111
 {
     cord(4,1);
     printf(CYN"%c",201);
@@ -209,12 +328,13 @@ void box()
     cord(4,26);
     printf("%c",186);
     cord(4,27);
-    printf("%c",186);
+    printf("%c"reset,186);
 }
 
 void homePage()
 {
     box();
+
 
 }
 
