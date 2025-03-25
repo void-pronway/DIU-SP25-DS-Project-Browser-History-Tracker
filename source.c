@@ -4,6 +4,7 @@
 #include<windows.h>
 #include<conio.h>
 #include "colors.h"
+#define maxHistory 10
 
 
 typedef struct history{
