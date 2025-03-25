@@ -6,7 +6,14 @@
 #include "colors.h"
 
 
-
+typedef struct history{
+    int order;
+    char url[50];
+    char urlName[50];
+    time_t tm* current_time;
+    struct history *prev;
+    struct history *next;
+}node;
 
 //function prototype for our program
 void homePage();
