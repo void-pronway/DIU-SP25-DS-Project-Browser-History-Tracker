@@ -561,7 +561,7 @@ int optionChoice()
     cord(30,24);
     printf("%c"reset,192);
 
-    cord(48,23);
+    cord(47,23);
     printf("Enter your choice here : ");
     scanf("%d",&choice);
     return choice;
