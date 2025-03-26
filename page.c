@@ -1,6 +1,7 @@
 void diu()
 {
 
+    box();
     //Prev box
     cord(5,2);
     printf(CYN"%c",218);
