@@ -42,6 +42,7 @@ void x();
 void fb();
 void cf();
 void blc();
+void gmail();
 
 
 
