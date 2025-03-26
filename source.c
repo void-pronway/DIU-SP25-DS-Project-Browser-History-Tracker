@@ -37,7 +37,7 @@ void box();
 int optionChoice();
 
 //function Prototype for the pages
-void diu(); //done
+void diu();
 void yt();
 void x();
 void fb();
@@ -60,6 +60,30 @@ int main()
         system("cls");
         homePage();
         choice=optionChoice();
+
+        /*switch(choice){
+        case 1:
+            searchPage();
+            break;
+        case 2:
+            fb();
+            break;
+        case 3:
+            blc();
+            break;
+        case 4:
+            diu();
+            break;
+        case 5:
+            cf();
+            break;
+        case 6:
+            menuPage();
+            break;
+        default:
+            printf("Invalid choice!");
+
+        }*/
 
 
         cord(40,26);
@@ -499,13 +523,13 @@ void homePage()
     printf("%c"reset,179);
 
     cord(33,19);
-    printf("1. FB");
+    printf("2. FB");
     cord(49,19);
-    printf("2. BLC");
+    printf("3. BLC");
     cord(65,19);
-    printf("3. DIU");
+    printf("4. DIU");
     cord(81,19);
-    printf("4. CF");
+    printf("5. CF");
 
     cord(98,25);
     printf(CYN"%c",218);
@@ -528,7 +552,7 @@ void homePage()
     printf("%c"reset,179);
 
     cord(103,26);
-    printf("5. Menu");
+    printf("6. Menu");
 
 
 }
