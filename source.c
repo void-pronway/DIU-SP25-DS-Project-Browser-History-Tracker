@@ -503,8 +503,28 @@ void homePage()
     cord(81,19);
     printf("4. CF");
 
+    cord(98,25);
+    printf(CYN"%c",218);
+    for(int i=0;i<15;i++){
+        printf("%c",196);
+    }
 
+    cord(98,27);
+    printf("%c",192);
+    for(int i=0;i<15;i++){
+        printf("%c",196);
+    }
+    cord(114,25);
+    printf("%c",191);
+    cord(114,27);
+    printf("%c",217);
+    cord(114,26);
+    printf("%c",179);
+    cord(98,26);
+    printf("%c"reset,179);
 
+    cord(103,26);
+    printf("5. Menu");
 
 
 }
