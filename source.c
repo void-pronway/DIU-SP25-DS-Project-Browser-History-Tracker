@@ -38,9 +38,9 @@ int optionChoice();
 
 //function Prototype for the pages
 void diu(); //done
-void yt();
-void x();
-void fb();
+void yt(); //sourov
+void x();  //sourov
+void fb(); //sourov
 void cf();
 void blc();
 void gmail();
