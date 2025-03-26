@@ -37,7 +37,7 @@ void box();
 int optionChoice();
 
 //function Prototype for the pages
-void diu();
+void diu(); //done
 void yt();
 void x();
 void fb();
