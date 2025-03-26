@@ -62,6 +62,7 @@ int main()
         choice=optionChoice();
 
 
+
         cord(40,26);
         printf(CYN"Do you want go to the HomePage?"WHT"(y/n)"reset);
         continueChoice=getch();
