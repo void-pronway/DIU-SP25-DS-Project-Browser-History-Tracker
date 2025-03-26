@@ -49,17 +49,17 @@ void gmail();
 int main()
 {
     char continueChoice;
-    start();
+    /*start();
     loadFromFile();
 
-    usleep(1000000);
+    usleep(1000000);*/
 
     do{
         system("cls");
         homePage();
 
-        cord(45,12);
-        printf(CYN"Do you want go to the HomePage?"reset);
+        cord(40,26);
+        printf(CYN"Do you want go to the HomePage?"WHT"(y/n)"reset);
         continueChoice=getch();
     }while(continueP(&continueChoice));
 
@@ -74,12 +74,32 @@ void cord(int x, int y)
     SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE),crd);
 }
 
+void print_ByteSurf() {
+    cord(38,3);
+    printf(CYN"  ____        _        _____             __  ");
+    cord(38,4);
+    printf(" |  _ \\      | |      / ____|           / _| ");
+    cord(38,5);
+    printf(" | |_) |_   _| |_ ___| (___  _   _ _ __| |_  ");
+    cord(38,6);
+    printf(" |  _ <| | | | __/ _ \\\\___ \\| | | | '__|  _| ");
+    cord(38,7);
+    printf(" | |_) | |_| | ||  __/____) | |_| | |  | |   ");
+    cord(38,8);
+    printf(" |____/ \\__, |\\__\\___|_____/ \\__,_|_|  |_|   ");
+    cord(38,9);
+    printf("        __/ |                                ");
+    cord(38,10);
+    printf("       |___/                                 "reset);
+}
+
+
 void start()
 {
     system("cls");
     box();
-    cord(50,13);
-    printf(CYN"Opening ByteSurf\n\n"reset);
+    //printf(CYN"Opening ByteSurf\n\n"reset);
+    print_ByteSurf();
     cord(25,15);
     for(int loading=0; loading<70; loading++)
     {
@@ -346,6 +366,145 @@ void box()//inside width 111
 void homePage()
 {
     box();
+    print_ByteSurf();
+
+    cord(30,12);
+    printf(CYN"%c",218);
+
+    cord(31,12);
+    for(int i=0;i<58;i++){
+        printf("%c",196);
+    }
+
+    cord(89,12);
+    printf("%c",191);
+    cord(89,13);
+    printf("%c",179);
+    cord(89,14);
+    printf("%c",217);
+
+    cord(31,14);
+    for(int i=0;i<58;i++){
+        printf("%c",196);
+    }
+
+    cord(30,13);
+    printf("%c",179);
+    cord(30,14);
+    printf("%c"reset,192);
+
+    cord(52,13);
+    printf("1. Search URL.....");
+
+    cord(54,16);
+    printf("Quick Access");
+
+    cord(30,18);
+    printf(CYN"%c",218);
+    cord(30,19);
+    printf("%c",179);
+    cord(30,20);
+    printf("%c",192);
+
+    cord(31,20);
+    for(int i=0;i<10;i++){
+        printf("%c",196);
+    }
+
+    cord(47,20);
+    for(int i=0;i<10;i++){
+        printf("%c",196);
+    }
+
+    cord(63,20);
+    for(int i=0;i<10;i++){
+        printf("%c",196);
+    }
+
+    cord(79,20);
+    for(int i=0;i<10;i++){
+        printf("%c",196);
+    }
+
+    //jk
+    cord(31,18);
+    for(int i=0;i<10;i++){
+        printf("%c",196);
+    }
+
+    cord(47,18);
+    for(int i=0;i<10;i++){
+        printf("%c",196);
+    }
+
+    cord(63,18);
+    for(int i=0;i<10;i++){
+        printf("%c",196);
+    }
+
+    cord(79,18);
+    for(int i=0;i<10;i++){
+        printf("%c",196);
+    }
+
+    cord(89,18);
+    printf("%c",191);
+    cord(73,18);
+    printf("%c",191);
+    cord(57,18);
+    printf("%c",191);
+    cord(41,18);
+    printf("%c",191);
+
+    cord(46,18);
+    printf("%c",218);
+    cord(62,18);
+    printf("%c",218);
+    cord(78,18);
+    printf("%c",218);
+
+    cord(46,20);
+    printf("%c",192);
+    cord(62,20);
+    printf("%c",192);
+    cord(78,20);
+    printf("%c",192);
+
+    cord(89,20);
+    printf("%c",217);
+    cord(73,20);
+    printf("%c",217);
+    cord(57,20);
+    printf("%c",217);
+    cord(41,20);
+    printf("%c",217);
+
+    cord(41,19);
+    printf("%c",179);
+    cord(46,19);
+    printf("%c",179);
+    cord(57,19);
+    printf("%c",179);
+    cord(62,19);
+    printf("%c",179);
+    cord(73,19);
+    printf("%c",179);
+    cord(78,19);
+    printf("%c",179);
+    cord(89,19);
+    printf("%c"reset,179);
+
+    cord(33,19);
+    printf("1. FB");
+    cord(49,19);
+    printf("2. BLC");
+    cord(65,19);
+    printf("3. DIU");
+    cord(81,19);
+    printf("4. CF");
+
+
+
 
 
 }
