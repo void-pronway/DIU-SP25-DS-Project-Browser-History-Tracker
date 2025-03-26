@@ -34,6 +34,7 @@ void coord(int x, int y);
 void time();
 int continueP(char *x);
 void box();
+int optionChoice();
 
 //function Prototype for the pages
 void diu();
@@ -49,14 +50,17 @@ void gmail();
 int main()
 {
     char continueChoice;
-    /*start();
+    int choice;
+    start();
     loadFromFile();
 
-    usleep(1000000);*/
+    usleep(1000000);
 
     do{
         system("cls");
         homePage();
+        choice=optionChoice();
+
 
         cord(40,26);
         printf(CYN"Do you want go to the HomePage?"WHT"(y/n)"reset);
@@ -526,6 +530,41 @@ void homePage()
     cord(103,26);
     printf("5. Menu");
 
+
+}
+
+int optionChoice()
+{
+    int choice;
+    cord(30,22);
+    printf(CYN"%c",218);
+
+    cord(31,22);
+    for(int i=0;i<58;i++){
+        printf("%c",196);
+    }
+
+    cord(89,22);
+    printf("%c",191);
+    cord(89,23);
+    printf("%c",179);
+    cord(89,24);
+    printf("%c",217);
+
+    cord(31,24);
+    for(int i=0;i<58;i++){
+        printf("%c",196);
+    }
+
+    cord(30,23);
+    printf("%c",179);
+    cord(30,24);
+    printf("%c"reset,192);
+
+    cord(48,23);
+    printf("Enter your choice here : ");
+    scanf("%d",&choice);
+    return choice;
 
 }
 
