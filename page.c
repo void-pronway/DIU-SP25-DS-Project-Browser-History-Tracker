@@ -650,16 +650,6 @@ void cf()
     cord(7,24);
     printf("expertise.");
 
-
-
-
-
-
-
-
-
-
-
         //menu box
         cord(98,25);
     printf(CYN"%c",218);
@@ -685,7 +675,7 @@ void cf()
 
     cord(103,26);
     printf("4. Menu");
-    getch();
+
 
 
 }
@@ -1060,7 +1050,7 @@ void blc()
 
     cord(103,26);
     printf("4. Menu");
-    getch();
+
 
 
 
