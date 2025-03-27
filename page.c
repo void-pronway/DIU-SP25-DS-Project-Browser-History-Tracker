@@ -1,7 +1,8 @@
 void diu()
 {
-
+    system("cls");
     box();
+
     //Prev box
     cord(5,2);
     printf(CYN"%c",218);
@@ -117,7 +118,7 @@ void diu()
 
     //diu section 1
     cord(5,14);
-    printf(CYN"%c",218);
+    printf(WHT"%c",218);
     for(int i = 0; i<14; i++)
     {
         printf("%c",196);
@@ -127,7 +128,7 @@ void diu()
     printf("%c"reset,179);
     printf("  Admissions ");
     cord(5,16);
-    printf(CYN"%c",192);
+    printf(WHT"%c",192);
     for(int i = 0; i<14; i++)
     {
         printf("%c",196);
@@ -139,7 +140,7 @@ void diu()
 
     //diu section 2
     cord(21,14);
-    printf(CYN"%c",218);
+    printf(WHT"%c",218);
     for(int i = 0; i<14; i++)
     {
         printf("%c",196);
@@ -149,7 +150,7 @@ void diu()
     printf("%c"reset,179);
     printf("   Academics ");
     cord(21,16);
-    printf(CYN"%c",192);
+    printf(WHT"%c",192);
     for(int i = 0; i<14; i++)
     {
         printf("%c",196);
@@ -160,7 +161,7 @@ void diu()
 
     //diu section 3
     cord(37,14);
-    printf(CYN"%c",218);
+    printf(WHT"%c",218);
     for(int i = 0; i<14; i++)
     {
         printf("%c",196);
@@ -170,7 +171,7 @@ void diu()
     printf("%c"reset,179);
     printf("    Campus ");
     cord(37,16);
-    printf(CYN"%c",192);
+    printf(WHT"%c",192);
     for(int i = 0; i<14; i++)
     {
         printf("%c",196);
@@ -181,7 +182,7 @@ void diu()
 
     //diu section 4
     cord(53,14);
-    printf(CYN"%c",218);
+    printf(WHT"%c",218);
     for(int i = 0; i<14; i++)
     {
         printf("%c",196);
@@ -191,7 +192,7 @@ void diu()
     printf("%c"reset,179);
     printf("   Research ");
     cord(53,16);
-    printf(CYN"%c",192);
+    printf(WHT"%c",192);
     for(int i = 0; i<14; i++)
     {
         printf("%c",196);
@@ -203,7 +204,7 @@ void diu()
 
     //diu section 5
     cord(69,14);
-    printf(CYN"%c",218);
+    printf(WHT"%c",218);
     for(int i = 0; i<15; i++)
     {
         printf("%c",196);
@@ -213,7 +214,7 @@ void diu()
     printf("%c"reset,179);
     printf(" International");
     cord(69,16);
-    printf(CYN"%c",192);
+    printf(WHT"%c",192);
     for(int i = 0; i<15; i++)
     {
         printf("%c",196);
@@ -224,7 +225,7 @@ void diu()
 
     //diu section 6
     cord(86,14);
-    printf(CYN"%c",218);
+    printf(WHT"%c",218);
     for(int i = 0; i<13; i++)
     {
         printf("%c",196);
@@ -234,7 +235,7 @@ void diu()
     printf("%c"reset,179);
     printf("  Help Desk");
     cord(86,16);
-    printf(CYN"%c",192);
+    printf(WHT"%c",192);
     for(int i = 0; i<13; i++)
     {
         printf("%c",196);
@@ -245,7 +246,7 @@ void diu()
 
     //diu section 7
     cord(101,14);
-    printf(CYN"%c",218);
+    printf(WHT"%c",218);
     for(int i = 0; i<13; i++)
     {
         printf("%c",196);
@@ -255,7 +256,7 @@ void diu()
     printf("%c"reset,179);
     printf("   About");
     cord(101,16);
-    printf(CYN"%c",192);
+    printf(WHT"%c",192);
     for(int i = 0; i<13; i++)
     {
         printf("%c",196);
@@ -299,9 +300,18 @@ void diu()
     printf("%c"reset,179);
 
     cord(103,26);
-    printf("5. Menu");
+    printf("4. Menu");
 
 }
+
+
+
+
+
+
+
+
+
 
 
 
@@ -418,7 +428,7 @@ void cf()
 
     //cf section 1
     cord(5,13);
-    printf(CYN"%c",218);
+    printf(WHT"%c",218);
     for(int i = 0; i<8; i++)
     {
         printf("%c",196);
@@ -428,7 +438,7 @@ void cf()
     printf("%c"reset,179);
     printf("  Home ");
     cord(5,15);
-    printf(CYN"%c",192);
+    printf(WHT"%c",192);
     for(int i = 0; i<8; i++)
     {
         printf("%c",196);
@@ -439,7 +449,7 @@ void cf()
 
     //cf section 2
     cord(15,13);
-    printf(CYN"%c",218);
+    printf(WHT"%c",218);
     for(int i = 0; i<7; i++)
     {
         printf("%c",196);
@@ -449,7 +459,7 @@ void cf()
     printf("%c"reset,179);
     printf("  TOP ");
     cord(15,15);
-    printf(CYN"%c",192);
+    printf(WHT"%c",192);
     for(int i = 0; i<7; i++)
     {
         printf("%c",196);
@@ -460,7 +470,7 @@ void cf()
 
     //cf section 3
     cord(24,13);
-    printf(CYN"%c",218);
+    printf(WHT"%c",218);
     for(int i = 0; i<9; i++)
     {
         printf("%c",196);
@@ -470,7 +480,7 @@ void cf()
     printf("%c"reset,179);
     printf(" Catalog");
     cord(24,15);
-    printf(CYN"%c",192);
+    printf(WHT"%c",192);
     for(int i = 0; i<9; i++)
     {
         printf("%c",196);
@@ -482,7 +492,7 @@ void cf()
 
     //cf section 4
     cord(35,13);
-    printf(CYN"%c",218);
+    printf(WHT"%c",218);
     for(int i = 0; i<10; i++)
     {
         printf("%c",196);
@@ -492,7 +502,7 @@ void cf()
     printf("%c"reset,179);
     printf(" Contests");
     cord(35,15);
-    printf(CYN"%c",192);
+    printf(WHT"%c",192);
     for(int i = 0; i<10; i++)
     {
         printf("%c",196);
@@ -503,7 +513,7 @@ void cf()
 
     //cf section 5
     cord(47,13);
-    printf(CYN"%c",218);
+    printf(WHT"%c",218);
     for(int i = 0; i<14; i++)
     {
         printf("%c",196);
@@ -513,7 +523,7 @@ void cf()
     printf("%c"reset,179);
     printf(" Problem Set");
     cord(47,15);
-    printf(CYN"%c",192);
+    printf(WHT"%c",192);
     for(int i = 0; i<14; i++)
     {
         printf("%c",196);
@@ -524,7 +534,7 @@ void cf()
 
     //cf section 6
     cord(63,13);
-    printf(CYN"%c",218);
+    printf(WHT"%c",218);
     for(int i = 0; i<7; i++)
     {
         printf("%c",196);
@@ -534,7 +544,7 @@ void cf()
     printf("%c"reset,179);
     printf(" Help");
     cord(63,15);
-    printf(CYN"%c",192);
+    printf(WHT"%c",192);
     for(int i = 0; i<7; i++)
     {
         printf("%c",196);
@@ -546,7 +556,7 @@ void cf()
 
     //ranking  box
     cord(79,8);
-    printf(CYN"%c",218);
+    printf(WHT"%c",218);
     for(int i = 0; i<35; i++)
     {
         printf("%c",196);
@@ -582,7 +592,7 @@ void cf()
     printf("%c",179);
 
     cord(79,23);
-    printf(CYN"%c",192);
+    printf("%c",192);
     for(int i = 0; i<35; i++)
     {
         printf("%c",196);
@@ -634,7 +644,7 @@ void cf()
     cord(80,19);
     printf("  5         "RED"ksun48"reset"        3588");
     cord(80,21);
-    printf("  6        "RED"ecnerwala"reset"       3557");
+    printf("  6        "RED"ecnerwala"reset"      3557");
 
 
     cord(7,19);
@@ -649,6 +659,12 @@ void cf()
     printf("enthusiasts aiming to sharpen their algorithms and data structures");
     cord(7,24);
     printf("expertise.");
+
+
+
+
+
+
 
         //menu box
         cord(98,25);
@@ -677,8 +693,8 @@ void cf()
     printf("4. Menu");
 
 
-
 }
+
 
 
 void blc()
@@ -791,7 +807,7 @@ void blc()
 
     //blc section 1
     cord(6,12);
-    printf(CYN"%c",218);
+    printf(BCYN"%c",218);
     for(int i = 0; i<15; i++)
     {
         printf("%c",196);
@@ -799,9 +815,10 @@ void blc()
     printf("%c",191);
     cord(6,13);
     printf("%c"reset,179);
-    printf("      Home ");
+    cord(12,13);
+    printf( BCYN" Home "reset);
     cord(6,14);
-    printf(CYN"%c",192);
+    printf(BCYN"%c",192);
     for(int i = 0; i<15; i++)
     {
         printf("%c",196);
@@ -813,7 +830,7 @@ void blc()
 
     //blc section 2
     cord(6,15);
-    printf(CYN"%c",218);
+    printf(WHT"%c",218);
     for(int i = 0; i<15; i++)
     {
         printf("%c",196);
@@ -823,7 +840,7 @@ void blc()
     printf("%c"reset,179);
     printf("   Dashboard");
     cord(6,17);
-    printf(CYN"%c",192);
+    printf(WHT"%c",192);
     for(int i = 0; i<15; i++)
     {
         printf("%c",196);
@@ -835,7 +852,7 @@ void blc()
 
     //blc section 3
     cord(6,18);
-    printf(CYN"%c",218);
+    printf(WHT"%c",218);
     for(int i = 0; i<15; i++)
     {
         printf("%c",196);
@@ -845,7 +862,7 @@ void blc()
     printf("%c"reset,179);
     printf("  My courses");
     cord(6,20);
-    printf(CYN"%c",192);
+    printf(WHT"%c",192);
     for(int i = 0; i<15; i++)
     {
         printf("%c",196);
@@ -857,7 +874,7 @@ void blc()
 
     //blc section 4
     cord(6,21);
-    printf(CYN"%c",218);
+    printf(WHT"%c",218);
     for(int i = 0; i<15; i++)
     {
         printf("%c",196);
@@ -867,7 +884,7 @@ void blc()
     printf("%c"reset,179);
     printf("   Guidlines");
     cord(6,23);
-    printf(CYN"%c",192);
+    printf(WHT"%c",192);
     for(int i = 0; i<15; i++)
     {
         printf("%c",196);
@@ -879,7 +896,7 @@ void blc()
 
     //blc recent
     cord(60,6);
-    printf(CYN"%c",218);
+    printf(WHT"%c",218);
     for(int i = 0; i<11; i++)
     {
         printf("%c",196);
@@ -890,7 +907,7 @@ void blc()
     cord(63,7);
     printf(UWHT"Recent"reset);
     cord(60,8);
-    printf(CYN"%c",192);
+    printf(WHT"%c",192);
     for(int i = 0; i<11; i++)
     {
         printf("%c",196);
@@ -902,7 +919,7 @@ void blc()
 
     //blc search
     cord(74,6);
-    printf(CYN"%c",218);
+    printf(WHT"%c",218);
     for(int i = 0; i<20; i++)
     {
         printf("%c",196);
@@ -912,7 +929,7 @@ void blc()
     printf("%c"reset,179);
     printf(" BLC Search:");
     cord(74,8);
-    printf(CYN"%c",192);
+    printf(WHT"%c",192);
     for(int i = 0; i<20; i++)
     {
         printf("%c",196);
@@ -926,7 +943,7 @@ void blc()
 
     //blc Profile
     cord(97,6);
-    printf(CYN"%c",218);
+    printf(WHT"%c",218);
     for(int i = 0; i<16; i++)
     {
         printf("%c",196);
@@ -937,7 +954,7 @@ void blc()
     cord(102,7);
     printf(UWHT"Profile"reset);
     cord(97,8);
-    printf(CYN"%c",192);
+    printf(WHT"%c",192);
     for(int i = 0; i<16; i++)
     {
         printf("%c",196);
@@ -950,7 +967,7 @@ void blc()
 
     //Welcome box
     cord(28,12);
-    printf(CYN"%c",218);
+    printf(BCYN"%c",218);
     for(int i = 0; i<85; i++)
     {
         printf("%c",196);
@@ -1011,7 +1028,7 @@ void blc()
 
    //some text
     cord(34,14);
-    printf("Welcome to DIU Blending Learning Center.");
+    printf(BWHT"Welcome to DIU Blending Learning Center."reset);
     cord(34,17);
     printf("Blended Learning Center is the digital teaching and learninghub of Daffodil");
     cord(34,18);
@@ -1461,7 +1478,6 @@ void fb()
 
     cord(103,26);
     printf("4. Menu");
-
 
 
 }
