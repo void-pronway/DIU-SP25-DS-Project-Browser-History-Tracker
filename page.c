@@ -307,6 +307,8 @@ void diu()
 
 void cf()
 {
+    system("cls");
+    box();
     //Prev box
     cord(5,2);
     printf(CYN"%c",218);
@@ -684,6 +686,382 @@ void cf()
     cord(103,26);
     printf("4. Menu");
     getch();
+
+
+}
+
+
+void blc()
+{
+    system("cls");
+    box();
+
+    //Prev box
+    cord(5,2);
+    printf(CYN"%c",218);
+    for(int i = 0; i<6; i++)
+    {
+        printf("%c",196);
+    }
+    printf("%c",191);
+    cord(5,3);
+    printf("%c"reset,179);
+    printf(" Prev ");
+    cord(5,4);
+    printf(CYN"%c",192);
+    for(int i = 0; i<6; i++)
+    {
+        printf("%c",196);
+    }
+    printf("%c",217);
+    cord(12,3);
+    printf("%c"reset,179);
+
+    //Next box
+    cord(13,2);
+    printf(CYN"%c",218);
+    for(int i = 0; i<6; i++)
+    {
+        printf("%c",196);
+    }
+    printf("%c",191);
+    cord(13,3);
+    printf("%c"reset,179);
+    printf(" Next ");
+    cord(13,4);
+    printf(CYN"%c",192);
+    for(int i = 0; i<6; i++)
+    {
+        printf("%c",196);
+    }
+    printf("%c",217);
+    cord(20,3);
+    printf("%c"reset,179);
+
+    //Url box
+    cord(21,2);
+    printf(CYN"%c",218);
+    for(int i = 0; i<56; i++)
+    {
+        printf("%c",196);
+    }
+    printf("%c",191);
+    cord(21,3);
+    printf("%c"reset,179);
+    printf(" URL: ");
+    cord(21,4);
+    printf(CYN"%c",192);
+    for(int i = 0; i<56; i++)
+    {
+        printf("%c",196);
+    }
+    printf("%c",217);
+    cord(78,3);
+    printf("%c"reset,179);
+
+    //Search box
+    cord(79,2);
+    printf(CYN"%c",218);
+    for(int i = 0; i<35; i++)
+    {
+        printf("%c",196);
+    }
+    printf("%c",191);
+    cord(79,3);
+    printf("%c"reset,179);
+    printf(" Search: ");
+    cord(79,4);
+    printf(CYN"%c",192);
+    for(int i = 0; i<35; i++)
+    {
+        printf("%c",196);
+    }
+    printf("%c",217);
+    cord(115,3);
+    printf("%c"reset,179);
+
+
+
+
+    //logo
+    cord(5,5);
+    printf(BGRN"  _____ _____ _    _ "BBLU" ____  _      _____ \n");
+    cord(5,6);
+    printf(BGRN" |  __ \\_   _| |  | |"BBLU"|  _ \\| |    / ____|\n");
+    cord(5,7);
+    printf(BGRN" | |  | || | | |  | |"BBLU"| |_) | |   | |     \n");
+    cord(5,8);
+    printf(BGRN" | |  | || | | |  | |"BBLU"|  _ <| |   | |     \n");
+    cord(5,9);
+    printf(BGRN" | |__| || |_| |__| |"BBLU"| |_) | |___| |____ \n");
+    cord(5,10);
+    printf(BGRN" |_____/_____\\_____/"BBLU" |____/|______\\_____|\n");
+
+
+
+    //blc section 1
+    cord(6,12);
+    printf(CYN"%c",218);
+    for(int i = 0; i<15; i++)
+    {
+        printf("%c",196);
+    }
+    printf("%c",191);
+    cord(6,13);
+    printf("%c"reset,179);
+    printf("      Home ");
+    cord(6,14);
+    printf(CYN"%c",192);
+    for(int i = 0; i<15; i++)
+    {
+        printf("%c",196);
+    }
+    printf("%c",217);
+    cord(22,13);
+    printf("%c"reset,179);
+
+
+    //blc section 2
+    cord(6,15);
+    printf(CYN"%c",218);
+    for(int i = 0; i<15; i++)
+    {
+        printf("%c",196);
+    }
+    printf("%c",191);
+    cord(6,16);
+    printf("%c"reset,179);
+    printf("   Dashboard");
+    cord(6,17);
+    printf(CYN"%c",192);
+    for(int i = 0; i<15; i++)
+    {
+        printf("%c",196);
+    }
+    printf("%c",217);
+    cord(22,16);
+    printf("%c"reset,179);
+
+
+    //blc section 3
+    cord(6,18);
+    printf(CYN"%c",218);
+    for(int i = 0; i<15; i++)
+    {
+        printf("%c",196);
+    }
+    printf("%c",191);
+    cord(6,19);
+    printf("%c"reset,179);
+    printf("  My courses");
+    cord(6,20);
+    printf(CYN"%c",192);
+    for(int i = 0; i<15; i++)
+    {
+        printf("%c",196);
+    }
+    printf("%c",217);
+    cord(22,19);
+    printf("%c"reset,179);
+
+
+    //blc section 4
+    cord(6,21);
+    printf(CYN"%c",218);
+    for(int i = 0; i<15; i++)
+    {
+        printf("%c",196);
+    }
+    printf("%c",191);
+    cord(6,22);
+    printf("%c"reset,179);
+    printf("   Guidlines");
+    cord(6,23);
+    printf(CYN"%c",192);
+    for(int i = 0; i<15; i++)
+    {
+        printf("%c",196);
+    }
+    printf("%c",217);
+    cord(22,22);
+    printf("%c"reset,179);
+
+
+    //blc recent
+    cord(60,6);
+    printf(CYN"%c",218);
+    for(int i = 0; i<11; i++)
+    {
+        printf("%c",196);
+    }
+    printf("%c",191);
+    cord(60,7);
+    printf("%c"reset,179);
+    cord(63,7);
+    printf(UWHT"Recent"reset);
+    cord(60,8);
+    printf(CYN"%c",192);
+    for(int i = 0; i<11; i++)
+    {
+        printf("%c",196);
+    }
+    printf("%c",217);
+    cord(72,7);
+    printf("%c"reset,179);
+
+
+    //blc search
+    cord(74,6);
+    printf(CYN"%c",218);
+    for(int i = 0; i<20; i++)
+    {
+        printf("%c",196);
+    }
+    printf("%c",191);
+    cord(74,7);
+    printf("%c"reset,179);
+    printf(" BLC Search:");
+    cord(74,8);
+    printf(CYN"%c",192);
+    for(int i = 0; i<20; i++)
+    {
+        printf("%c",196);
+    }
+    printf("%c",217);
+    cord(95,7);
+    printf("%c"reset,179);
+
+
+
+
+    //blc Profile
+    cord(97,6);
+    printf(CYN"%c",218);
+    for(int i = 0; i<16; i++)
+    {
+        printf("%c",196);
+    }
+    printf("%c",191);
+    cord(97,7);
+    printf("%c"reset,179);
+    cord(102,7);
+    printf(UWHT"Profile"reset);
+    cord(97,8);
+    printf(CYN"%c",192);
+    for(int i = 0; i<16; i++)
+    {
+        printf("%c",196);
+    }
+    printf("%c",217);
+    cord(114,7);
+    printf("%c"reset,179);
+
+
+
+    //Welcome box
+    cord(28,12);
+    printf(CYN"%c",218);
+    for(int i = 0; i<85; i++)
+    {
+        printf("%c",196);
+    }
+    printf("%c",191);
+
+    cord(28,13);
+    printf("%c",179);
+    cord(28,14);
+    printf("%c",179);
+    cord(28,15);
+    printf("%c",179);
+    cord(28,16);
+    printf("%c",179);
+    cord(28,17);
+    printf("%c",179);
+    cord(28,18);
+    printf("%c",179);
+    cord(28,19);
+    printf("%c",179);
+    cord(28,20);
+    printf("%c",179);
+    cord(28,21);
+    printf("%c",179);
+    cord(28,22);
+    printf("%c",179);
+
+    cord(28,23);
+    printf("%c",192);
+    for(int i = 0; i<85; i++)
+    {
+        printf("%c",196);
+    }
+    printf("%c",217);
+
+    cord(114,13);
+    printf("%c",179);
+    cord(114,14);
+    printf("%c",179);
+    cord(114,15);
+    printf("%c",179);
+    cord(114,16);
+    printf("%c",179);
+    cord(114,17);
+    printf("%c",179);
+    cord(114,18);
+    printf("%c",179);
+    cord(114,19);
+    printf("%c",179);
+    cord(114,20);
+    printf("%c",179);
+    cord(114,21);
+    printf("%c",179);
+
+    cord(114,22);
+    printf("%c"reset,179);
+
+
+   //some text
+    cord(34,14);
+    printf("Welcome to DIU Blending Learning Center.");
+    cord(34,17);
+    printf("Blended Learning Center is the digital teaching and learninghub of Daffodil");
+    cord(34,18);
+    printf("International University. The platform aims to connect teachers and students");
+    cord(34,19);
+    printf("aims to connect teachers and students effectively allowing teachers to track");
+    cord(34,20);
+    printf("progress of individual students and better facilitate their learning.");
+
+
+
+
+
+     //menu box
+        cord(98,25);
+    printf(CYN"%c",218);
+    for(int i=0; i<15; i++)
+    {
+        printf("%c",196);
+    }
+
+    cord(98,27);
+    printf("%c",192);
+    for(int i=0; i<15; i++)
+    {
+        printf("%c",196);
+    }
+    cord(114,25);
+    printf("%c",191);
+    cord(114,27);
+    printf("%c",217);
+    cord(114,26);
+    printf("%c",179);
+    cord(98,26);
+    printf("%c"reset,179);
+
+    cord(103,26);
+    printf("4. Menu");
+    getch();
+
 
 
 }
