@@ -20,7 +20,8 @@ typedef struct history{
 
 //function prototype for our program
 void homePage();
-void searchPage();
+void searchPage(char *url);
+void menuPage();
 void allHistory();
 void searchHistory();
 void goPrev();
@@ -35,6 +36,7 @@ void time();
 int continueP(char *x);
 void box();
 int optionChoice();
+void print_ByteSurf();
 
 //function Prototype for the pages
 void diu(); //done
@@ -49,7 +51,7 @@ void gmail();
 
 int main()
 {
-    char continueChoice;
+    char continueChoice,url[50];
     int choice;
     start();
     loadFromFile();
@@ -63,6 +65,14 @@ int main()
 
         switch(choice){
         case 1:
+            searchPage(url);
+            if(strcmp(url,"home")==0){
+                continue;
+            }
+            else if(strcmp(url,"diu.edu.bd")==0){              // insert func er kaaj baki ekhane
+                diu();
+
+            }
             break;
         case 2:
             break;
@@ -76,6 +86,7 @@ int main()
             cf();
             break;
         case 6:
+            menuPage();
             break;
         default:
             printf("Invalid");
@@ -387,8 +398,49 @@ void box()//inside width 111
     printf("%c"reset,186);
 }
 
+void searchPage(char *url)
+{
+    system("cls");
+    box();
+    print_ByteSurf();
+
+    cord(30,12);
+    printf(CYN"%c",218);
+
+    cord(31,12);
+    for(int i=0;i<58;i++){
+        printf("%c",196);
+    }
+
+    cord(89,12);
+    printf("%c",191);
+    cord(89,13);
+    printf("%c",179);
+    cord(89,14);
+    printf("%c",217);
+
+    cord(31,14);
+    for(int i=0;i<58;i++){
+        printf("%c",196);
+    }
+
+    cord(30,13);
+    printf("%c",179);
+    cord(30,14);
+    printf("%c"reset,192);
+
+    cord(50,15);
+    printf(BLK WHTB" Type your URL here "reset);
+    printf(BBLU"");
+    cord(31,13);
+    scanf("%s",url);
+
+
+}
+
 void homePage()
 {
+
     box();
     print_ByteSurf();
 
@@ -549,6 +601,47 @@ void homePage()
 
     cord(103,26);
     printf("6. Menu");
+
+
+}
+
+void menuPage()
+{
+    system("cls");
+    box();
+    print_ByteSurf();
+
+    /*cord(50,12);
+    printf("%c",218);
+
+    for(int i=1;i<=20;i++){
+        printf("%c",196);
+    }
+
+    cord(70,12);
+    printf("%c",191);
+    cord(70,13);
+    printf("%c",179);
+    cord(70,14);
+    printf("%c",217);
+
+    cord(50,14);
+    for(int i=1;i<=20;i++){
+        printf("%c",196);
+    }
+
+    cord(50,14);
+    printf("%c",192);
+    cord(50,13);
+    printf("%c",179);*/
+
+    cord(50,13);
+    for(int i=1;i<=20;i++){
+        printf("%c",196);
+    }
+
+    cord(58,12);
+    printf("Menu");
 
 
 }
@@ -915,6 +1008,9 @@ void diu()
 
     cord(103,26);
     printf("5. Menu");
+
+    cord(28,3);
+    printf(BWHT"diu.edu.bd"reset);
 
 }
 
@@ -1289,10 +1385,15 @@ void cf()
     cord(103,26);
     printf("4. Menu");
 
+    cord(28,3);
+    printf(BWHT"codeforces.com"reset);
+
 }
 
 void blc()
 {
+
+
     system("cls");
     box();
 
@@ -1654,5 +1755,8 @@ void blc()
 
     cord(103,26);
     printf("4. Menu");
+
+    cord(28,3);
+    printf(BWHT"elearn.daffodilvarsity.edu.bd"reset);
 
 }
