@@ -37,6 +37,8 @@ int continueP(char *x);
 void box();
 int optionChoice();
 void print_ByteSurf();
+void error_p();
+void error();
 
 //function Prototype for the pages
 void diu(); //done
@@ -62,6 +64,7 @@ int main()
         system("cls");
         homePage();
         choice=optionChoice();
+        fflush(stdin);
 
         switch(choice){
         case 1:
@@ -71,7 +74,28 @@ int main()
             }
             else if(strcmp(url,"diu.edu.bd")==0){              // insert func er kaaj baki ekhane
                 diu();
-
+            }
+            else if(strcmp(url,"elearn.daffodilvarsity.edu.bd")==0){
+                blc();
+            }
+            else if(strcmp(url,"codeforces.com")==0){
+                cf();
+            }
+            else if(strcmp(url,"facebook.com")==0){
+                fb();
+            }
+            else if(strcmp(url,"youtube.com")==0){
+                yt();
+            }
+            else if(strcmp(url,"x.com")==0){
+                x();
+            }
+            else if(strcmp(url,"gmail.com")==0){
+                gmail();
+            }
+            else{
+                error_p();
+                break;
             }
             break;
         case 2:
@@ -89,7 +113,9 @@ int main()
             menuPage();
             break;
         default:
-            printf("Invalid");
+            system("cls");
+            error();
+
         }
 
 
@@ -1343,7 +1369,7 @@ void cf()
     cord(80,19);
     printf("  5         "RED"ksun48"reset"        3588");
     cord(80,21);
-    printf("  6        "RED"ecnerwala"reset"       3557");
+    printf("  6        "RED"ecnerwala"reset"      3557");
 
 
     cord(7,19);
@@ -1758,5 +1784,73 @@ void blc()
 
     cord(28,3);
     printf(BWHT"elearn.daffodilvarsity.edu.bd"reset);
+
+}
+
+void error_p()
+{
+    system("cls");
+    box();
+    cord(30,5);
+    printf(RED"  ______                        _  _    ___  _  _     _  ");
+    cord(30,6);
+    printf(" |  ____|                      | || |  / _ \\| || |   | | ");
+    cord(30,7);
+    printf(" | |__   _ __ _ __ ___  _ __   | || |_| | | | || |_  | | ");
+    cord(30,8);
+    printf(" |  __| | '__| '__/ _ \\| '__|  |__   _| | | |__   _| | | ");
+    cord(30,9);
+    printf(" | |____| |  | | | (_) | |        | | | |_| |  | |   |_| ");
+    cord(30,10);
+    printf(" |______|_|  |_|  \\___/|_|        |_|  \\___/   |_|   (_) "reset);
+
+    cord(35,15);
+    printf(BRED"Our Budget is not Enough to Show You This Page");
+    cord(57,17);
+    printf(":("reset);
+
+}
+
+void error()
+{
+    system("cls");
+    box();
+    cord(30,5);
+    printf(RED"  ______                        _  _    ___  _  _     _  ");
+    cord(30,6);
+    printf(" |  ____|                      | || |  / _ \\| || |   | | ");
+    cord(30,7);
+    printf(" | |__   _ __ _ __ ___  _ __   | || |_| | | | || |_  | | ");
+    cord(30,8);
+    printf(" |  __| | '__| '__/ _ \\| '__|  |__   _| | | |__   _| | | ");
+    cord(30,9);
+    printf(" | |____| |  | | | (_) | |        | | | |_| |  | |   |_| ");
+    cord(30,10);
+    printf(" |______|_|  |_|  \\___/|_|        |_|  \\___/   |_|   (_) "reset);
+
+    cord(48,15);
+    printf(BRED"Enter the Right Option");
+    cord(57,17);
+    printf("-_-"reset);
+
+}
+
+void fb()
+{
+
+}
+
+void yt()
+{
+
+}
+
+void x()
+{
+
+}
+
+void gmail()
+{
 
 }
