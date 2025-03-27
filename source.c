@@ -635,39 +635,77 @@ void menuPage()
 {
     system("cls");
     box();
-    print_ByteSurf();
 
-    /*cord(50,12);
+    //1st
+
+    cord(6,2);
     printf("%c",218);
 
-    for(int i=1;i<=20;i++){
+    for(int i=1;i<=13;i++){
         printf("%c",196);
     }
 
-    cord(70,12);
+    cord(19,2);
     printf("%c",191);
-    cord(70,13);
+    cord(19,3);
     printf("%c",179);
-    cord(70,14);
+    cord(19,4);
+    printf("%c",179);
+    cord(19,5);
     printf("%c",217);
 
-    cord(50,14);
-    for(int i=1;i<=20;i++){
+    cord(7,5);
+    for(int i=1;i<=12;i++){
         printf("%c",196);
     }
 
-    cord(50,14);
+    cord(6,3);
+    printf("%c",179);
+    cord(6,4);
+    printf("%c",179);
+    cord(6,5);
     printf("%c",192);
-    cord(50,13);
-    printf("%c",179);*/
 
-    cord(50,13);
-    for(int i=1;i<=20;i++){
+    //2nd
+    cord(6,7);
+    printf("%c",218);
+
+    for(int i=1;i<=13;i++){
         printf("%c",196);
     }
 
-    cord(58,12);
-    printf("Menu");
+    cord(19,7);
+    printf("%c",191);
+    cord(19,8);
+    printf("%c",179);
+    cord(19,9);
+    printf("%c",179);
+    cord(19,10);
+    printf("%c",179);
+    cord(19,11);
+    printf("%c",179);
+    cord(19,12);
+    printf("%c",217);
+
+    cord(7,12);
+    for(int i=1;i<=12;i++){
+        printf("%c",196);
+    }
+
+    cord(6,8);
+    printf("%c",179);
+    cord(6,9);
+    printf("%c",179);
+    cord(6,10);
+    printf("%c",179);
+    cord(6,11);
+    printf("%c",179);
+    cord(6,12);
+    printf("%c",192);
+
+    cord(11,9); printf("All");
+    cord(9,10); printf("History");
+
 
 
 }
