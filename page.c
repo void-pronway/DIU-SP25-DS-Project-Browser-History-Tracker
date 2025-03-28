@@ -1478,7 +1478,359 @@ void fb()
 
     cord(103,26);
     printf("4. Menu");
-
-
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+void gmail()
+{
+    system("cls");
+    box();
+    //Prev box
+    cord(5,2);
+    printf(CYN"%c",218);
+    for(int i = 0; i<6; i++)
+    {
+        printf("%c",196);
+    }
+    printf("%c",191);
+    cord(5,3);
+    printf("%c"reset,179);
+    printf(" Prev ");
+    cord(5,4);
+    printf(CYN"%c",192);
+    for(int i = 0; i<6; i++)
+    {
+        printf("%c",196);
+    }
+    printf("%c",217);
+    cord(12,3);
+    printf("%c"reset,179);
+
+    //Next box
+    cord(13,2);
+    printf(CYN"%c",218);
+    for(int i = 0; i<6; i++)
+    {
+        printf("%c",196);
+    }
+    printf("%c",191);
+    cord(13,3);
+    printf("%c"reset,179);
+    printf(" Next ");
+    cord(13,4);
+    printf(CYN"%c",192);
+    for(int i = 0; i<6; i++)
+    {
+        printf("%c",196);
+    }
+    printf("%c",217);
+    cord(20,3);
+    printf("%c"reset,179);
+
+    //Url box
+    cord(21,2);
+    printf(CYN"%c",218);
+    for(int i = 0; i<56; i++)
+    {
+        printf("%c",196);
+    }
+    printf("%c",191);
+    cord(21,3);
+    printf("%c"reset,179);
+    printf(" URL: ");
+    cord(21,4);
+    printf(CYN"%c",192);
+    for(int i = 0; i<56; i++)
+    {
+        printf("%c",196);
+    }
+    printf("%c",217);
+    cord(78,3);
+    printf("%c"reset,179);
+
+    //Search box
+    cord(79,2);
+    printf(CYN"%c",218);
+    for(int i = 0; i<35; i++)
+    {
+        printf("%c",196);
+    }
+    printf("%c",191);
+    cord(79,3);
+    printf("%c"reset,179);
+    printf(" Search: ");
+    cord(79,4);
+    printf(CYN"%c",192);
+    for(int i = 0; i<35; i++)
+    {
+        printf("%c",196);
+    }
+    printf("%c",217);
+    cord(115,3);
+    printf("%c"reset,179);
+
+    //logo
+    cord(5,5);
+    printf(BBLU"   _____                   _"BGRN"  _ ");
+    cord(5,6);
+    printf(BBLU"  / ____|                 (_)"BGRN"| |");
+    cord(5,7);
+    printf(BBLU" | |  __"BRED"  _ __ ___  "BYEL" __ _"BBLU"  _"BGRN" | |");
+    cord(5,8);
+    printf(BBLU" | | |_ |"BRED"| '_ ` _ \\ "BYEL"/ _` |"BBLU"| |"BGRN"| |");
+    cord(5,9);
+    printf(BBLU" | |__| |"BRED"| | | | | | "BYEL"(_| |"BBLU"| |"BGRN"| |");
+    cord(5,10);
+    printf(BBLU"  \\_____|"BRED"|_| |_| |_|"BYEL"\\__,_|"BBLU"|_|"BGRN"|_|");
+
+    //search
+    cord(43,7);
+    printf(BYEL"%c",218);
+    for(int i = 0; i<70; i++)
+    {
+        printf("%c",196);
+    }
+    printf("%c",191);
+    cord(43,8);
+    printf("%c"reset,179);
+    printf("Search email:");
+    cord(43,9);
+    printf(BYEL"%c",192);
+    for(int i = 0; i<70; i++)
+    {
+        printf("%c",196);
+    }
+    printf("%c",217);
+    cord(114,8);
+    printf("%c"reset,179);
+
+    //text
+     cord(7,12);
+    printf( WHTB BBLK"    Inbox    "reset);
+
+    cord(26,12);
+    printf("Starred");
+    cord(48,12);
+    printf("Sent");
+    cord(67,12);
+    printf("Drafts");
+    cord(89,12);
+    printf("Spam");
+    cord(105,12);
+    printf("Trash");
+    cord(8,14);
+    printf(BMAG"#"BWHT"   From"reset);
+    cord(57,14);
+    printf("Subject");
+    cord(105,14);
+    printf("Time");
+
+    cord(20,12);
+    printf(BLU"|");
+    cord(40,12);
+    printf("|");
+    cord(59,12);
+    printf("|");
+    cord(81,12);
+    printf("|");
+    cord(99,12);
+    printf("|"reset);
+
+
+    //compose
+    cord(6,23);
+    printf(BYEL"%c",218);
+    for(int i = 0; i<15; i++)
+    {
+        printf("%c",196);
+    }
+    printf("%c",191);
+    cord(6,24);
+    printf("%c"reset,179);
+    printf("    Compose ");
+    cord(6,25);
+    printf(BYEL"%c",192);
+    for(int i = 0; i<15; i++)
+    {
+        printf("%c",196);
+    }
+    printf("%c",217);
+    cord(22,24);
+    printf("%c"reset,179);
+
+    //refresh
+    cord(24,23);
+    printf(BYEL"%c",218);
+    for(int i = 0; i<15; i++)
+    {
+        printf("%c",196);
+    }
+    printf("%c",191);
+    cord(24,24);
+    printf("%c"reset,179);
+    printf("    Refresh ");
+    cord(24,25);
+    printf(BYEL"%c",192);
+    for(int i = 0; i<15; i++)
+    {
+        printf("%c",196);
+    }
+    printf("%c",217);
+    cord(40,24);
+    printf("%c"reset,179);
+
+    //settings
+    cord(42,23);
+    printf(BYEL"%c",218);
+    for(int i = 0; i<15; i++)
+    {
+        printf("%c",196);
+    }
+    printf("%c",191);
+    cord(42,24);
+    printf("%c"reset,179);
+    printf("   Settings ");
+    cord(42,25);
+    printf(BYEL"%c",192);
+    for(int i = 0; i<15; i++)
+    {
+        printf("%c",196);
+    }
+    printf("%c",217);
+    cord(58,24);
+    printf("%c"reset,179);
+
+    //logout
+    cord(60,23);
+    printf(BRED"%c",218);
+    for(int i = 0; i<15; i++)
+    {
+        printf("%c",196);
+    }
+    printf("%c",191);
+    cord(60,24);
+    printf("%c"reset,179);
+    printf("    Log Out ");
+    cord(60,25);
+    printf(BRED"%c",192);
+    for(int i = 0; i<15; i++)
+    {
+        printf("%c",196);
+    }
+    printf("%c",217);
+    cord(76,24);
+    printf("%c"reset,179);
+
+    cord(7,15);
+    for(int i=0; i<107; i++)
+    {
+        printf(CYN"-"reset);
+
+    }
+
+    cord(7,17);
+    printf(BMAG" 1"BWHT"   Open Ai Support           "BCYN" ChatGPT subscription"BWHT" - Come on , renew me already!!                "BMAG"12m"reset);
+    cord(7,19);
+    printf(BMAG" 2"BWHT"   DIU Portal                "BCYN" Exam Schedule Update"BWHT" - Exam delayed (Haha , No)                    "BMAG"1h"reset);
+    cord(7,21);
+    printf(BMAG" 3"BWHT"   Codeforces                "BCYN" Contest anouncement"BWHT" - New Contest: You will cry:))                 "BMAG"3h"reset);
+
+
+
+    // box
+    cord(6,13);
+    printf(BLU"%c",218);
+    for(int i = 0; i<107; i++)
+    {
+        printf("%c",196);
+    }
+    printf("%c",191);
+
+    cord(6,14);
+    printf("%c",179);
+    cord(6,15);
+    printf("%c",179);
+    cord(6,16);
+    printf("%c",179);
+    cord(6,17);
+    printf("%c",179);
+    cord(6,18);
+    printf("%c",179);
+    cord(6,19);
+    printf("%c",179);
+    cord(6,20);
+    printf("%c",179);
+    cord(6,21);
+    printf("%c",179);
+    cord(6,22);
+    printf("%c",179);
+
+    cord(6,22);
+    printf("%c",192);
+    for(int i = 0; i<107; i++)
+    {
+        printf("%c",196);
+    }
+    printf("%c",217);
+
+
+    cord(114,14);
+    printf("%c",179);
+    cord(114,15);
+    printf("%c",179);
+    cord(114,16);
+    printf("%c",179);
+    cord(114,17);
+    printf("%c",179);
+    cord(114,18);
+    printf("%c",179);
+    cord(114,19);
+    printf("%c",179);
+    cord(114,20);
+    printf("%c",179);
+
+
+
+    cord(114,21);
+    printf("%c"reset,179);
+
+        //menu box
+    cord(98,25);
+    printf(CYN"%c",218);
+    for(int i=0; i<15; i++)
+    {
+        printf("%c",196);
+    }
+
+    cord(98,27);
+    printf("%c",192);
+    for(int i=0; i<15; i++)
+    {
+        printf("%c",196);
+    }
+    cord(114,25);
+    printf("%c",191);
+    cord(114,27);
+    printf("%c",217);
+    cord(114,26);
+    printf("%c",179);
+    cord(98,26);
+    printf("%c"reset,179);
+
+    cord(103,26);
+    printf("4. Menu");
+
+}
