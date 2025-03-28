@@ -23,6 +23,7 @@ void homePage();
 void searchPage(char *url);
 void menuPage();
 void allHistory();
+void deleteAllHistory();
 void searchHistory();
 void goPrev();
 void goFrwd();
@@ -44,10 +45,10 @@ void error();
 void diu(); //done
 void yt(); //sourov
 void x();  //sourov
-void fb(); //sourov
-void cf();
-void blc();
-void gmail();
+void fb(); //done
+void cf();  //done
+void blc();  //done
+void gmail();  //mashfiq
 
 
 
@@ -99,6 +100,7 @@ int main()
             }
             break;
         case 2:
+            fb();
             break;
         case 3:
             blc();
@@ -705,6 +707,158 @@ void menuPage()
 
     cord(11,9); printf("All");
     cord(9,10); printf("History");
+
+    //3rd
+
+    cord(6,14);
+    printf("%c",218);
+
+    for(int i=1;i<=13;i++){
+        printf("%c",196);
+    }
+
+    cord(19,14);
+    printf("%c",191);
+    cord(19,15);
+    printf("%c",179);
+    cord(19,16);
+    printf("%c",179);
+    cord(19,17);
+    printf("%c",179);
+    cord(19,18);
+    printf("%c",179);
+    cord(19,19);
+    printf("%c",217);
+
+    cord(7,19);
+    for(int i=1;i<=12;i++){
+        printf("%c",196);
+    }
+
+    cord(6,15);
+    printf("%c",179);
+    cord(6,16);
+    printf("%c",179);
+    cord(6,17);
+    printf("%c",179);
+    cord(6,18);
+    printf("%c",179);
+    cord(6,19);
+    printf("%c",192);
+
+    cord(10,16); printf("Clear");
+    cord(9,17); printf("History");
+
+    //4th
+
+    cord(6,21);
+    printf("%c",218);
+
+    for(int i=1;i<=13;i++){
+        printf("%c",196);
+    }
+
+    cord(19,21);
+    printf("%c",191);
+    cord(19,22);
+    printf("%c",179);
+    cord(19,23);
+    printf("%c",179);
+    cord(19,24);
+    printf("%c",179);
+    cord(19,25);
+    printf("%c",179);
+    cord(19,26);
+    printf("%c",217);
+
+    cord(7,26);
+    for(int i=1;i<=12;i++){
+        printf("%c",196);
+    }
+
+    cord(6,22);
+    printf("%c",179);
+    cord(6,23);
+    printf("%c",179);
+    cord(6,24);
+    printf("%c",179);
+    cord(6,25);
+    printf("%c",179);
+    cord(6,26);
+    printf("%c",192);
+
+    cord(11,23); printf("Find");
+    cord(9,24); printf("History");
+
+    //choice
+    int choiceMenu;
+
+    cord(20,2);
+    printf(CYN"%c",218);
+
+    cord(21,2);
+    for(int i=0;i<58;i++){
+        printf("%c",196);
+    }
+
+    cord(79,2);
+    printf("%c",191);
+    cord(79,3);
+    printf("%c",179);
+    cord(79,4);
+    printf("%c",217);
+
+    cord(21,4);
+    for(int i=0;i<58;i++){
+        printf("%c",196);
+    }
+
+    cord(20,3);
+    printf("%c",179);
+    cord(20,4);
+    printf("%c"reset,192);
+
+    //doted line
+    cord(20,5);
+    for(int i=0;i<96;i++){
+        printf("-");
+    }
+    cord(20,6);
+    printf("%c",174);
+    cord(20,7);
+    printf("%c",174);
+    cord(20,8);
+    printf("%c",174);
+    cord(20,9);
+    printf("%c",221);
+    cord(20,10);
+    printf("%c",249);
+    cord(20,11);
+    printf("%c",249);
+    cord(20,12);
+    printf("%c",249);
+    cord(20,13);
+    printf("%c",249);
+
+
+
+    cord(37,3);
+    printf("Enter your choice here : ");
+    scanf("%d",&choiceMenu);
+
+    switch(choiceMenu){
+    case 1:
+        allHistory();
+        break;
+    case 2:
+        deleteAllHistory();
+        break;
+    case 3:
+        searchHistory();
+        break;
+    default:
+        printf("Invalid");
+    }
 
 
 
@@ -1875,6 +2029,406 @@ void error()
 
 void fb()
 {
+    system("cls");
+    box();
+
+    //Prev box
+    cord(5,2);
+    printf(CYN"%c",218);
+    for(int i = 0; i<6; i++)
+    {
+        printf("%c",196);
+    }
+    printf("%c",191);
+    cord(5,3);
+    printf("%c"reset,179);
+    printf(" Prev ");
+    cord(5,4);
+    printf(CYN"%c",192);
+    for(int i = 0; i<6; i++)
+    {
+        printf("%c",196);
+    }
+    printf("%c",217);
+    cord(12,3);
+    printf("%c"reset,179);
+
+    //Next box
+    cord(13,2);
+    printf(CYN"%c",218);
+    for(int i = 0; i<6; i++)
+    {
+        printf("%c",196);
+    }
+    printf("%c",191);
+    cord(13,3);
+    printf("%c"reset,179);
+    printf(" Next ");
+    cord(13,4);
+    printf(CYN"%c",192);
+    for(int i = 0; i<6; i++)
+    {
+        printf("%c",196);
+    }
+    printf("%c",217);
+    cord(20,3);
+    printf("%c"reset,179);
+
+    //Url box
+    cord(21,2);
+    printf(CYN"%c",218);
+    for(int i = 0; i<56; i++)
+    {
+        printf("%c",196);
+    }
+    printf("%c",191);
+    cord(21,3);
+    printf("%c"reset,179);
+    printf(" URL: facebook.com");
+    cord(21,4);
+    printf(CYN"%c",192);
+    for(int i = 0; i<56; i++)
+    {
+        printf("%c",196);
+    }
+    printf("%c",217);
+    cord(78,3);
+    printf("%c"reset,179);
+
+    //Search box
+    cord(79,2);
+    printf(CYN"%c",218);
+    for(int i = 0; i<35; i++)
+    {
+        printf("%c",196);
+    }
+    printf("%c",191);
+    cord(79,3);
+    printf("%c"reset,179);
+    printf(" Search: ");
+    cord(79,4);
+    printf(CYN"%c",192);
+    for(int i = 0; i<35; i++)
+    {
+        printf("%c",196);
+    }
+    printf("%c",217);
+    cord(115,3);
+    printf("%c"reset,179);
+
+
+    //logo
+    cord(8,6);
+    printf(BBLU"   __  ");
+    cord(8,7);
+    printf("  / _| ");
+    cord(8,8);
+    printf(" | |_  ");
+    cord(8,9);
+    printf(" |  _| ");
+    cord(8,10);
+    printf(" | |   ");
+    cord(8,11);
+    printf(" |_|   "reset);
+
+
+    //fb search
+    cord(30,6);
+    printf(BBLU"%c",218);
+    for(int i = 0; i<51; i++)
+    {
+        printf("%c",196);
+    }
+    printf("%c",191);
+    cord(30,7);
+    printf("%c"reset,179);
+    cord(32,7);
+    printf("Search Facebook:");
+    cord(30,8);
+    printf(BBLU"%c",192);
+    for(int i = 0; i<51; i++)
+    {
+        printf("%c",196);
+    }
+    printf("%c",217);
+    cord(82,7);
+    printf("%c"reset,179);
+
+
+   //fb Home
+    cord(20,9);
+    printf(BBLU"%c",218);
+    for(int i = 0; i<7; i++)
+    {
+        printf("%c",196);
+    }
+    printf("%c",191);
+    cord(20,10);
+    printf("%c"reset,179);
+    cord(23,10);
+    printf("Home");
+    cord(20,11);
+    printf(BBLU"%c",192);
+    for(int i = 0; i<7; i++)
+    {
+        printf("%c",196);
+    }
+    printf("%c",217);
+    cord(28,10);
+    printf("%c"reset,179);
+
+
+    //fb Profile
+    cord(30,9);
+    printf(BBLU"%c",218);
+    for(int i = 0; i<9; i++)
+    {
+        printf("%c",196);
+    }
+    printf("%c",191);
+    cord(30,10);
+    printf("%c"reset,179);
+    cord(32,10);
+    printf("Profile");
+    cord(30,11);
+    printf(BBLU"%c",192);
+    for(int i = 0; i<9; i++)
+    {
+        printf("%c",196);
+    }
+    printf("%c",217);
+    cord(40,10);
+    printf("%c"reset,179);
+
+
+    //fb Messages
+    cord(42,9);
+    printf(BBLU"%c",218);
+    for(int i = 0; i<10; i++)
+    {
+        printf("%c",196);
+    }
+    printf("%c",191);
+    cord(42,10);
+    printf("%c"reset,179);
+    cord(44,10);
+    printf("Messages");
+    cord(42,11);
+    printf(BBLU"%c",192);
+    for(int i = 0; i<10; i++)
+    {
+        printf("%c",196);
+    }
+    printf("%c",217);
+    cord(53,10);
+    printf("%c"reset,179);
+
+
+    //fb notifications
+    cord(55,9);
+    printf(BBLU"%c",218);
+    for(int i = 0; i<15; i++)
+    {
+        printf("%c",196);
+    }
+    printf("%c",191);
+    cord(55,10);
+    printf("%c"reset,179);
+    cord(57,10);
+    printf("Notifications");
+    cord(55,11);
+    printf(BBLU"%c",192);
+    for(int i = 0; i<15; i++)
+    {
+        printf("%c",196);
+    }
+    printf("%c",217);
+    cord(71,10);
+    printf("%c"reset,179);
+
+
+    //fb Chat
+    cord(73,9);
+    printf(BBLU"%c",218);
+    for(int i = 0; i<7; i++)
+    {
+        printf("%c",196);
+    }
+    printf("%c",191);
+    cord(73,10);
+    printf("%c"reset,179);
+    cord(75,10);
+    printf("Chat");
+    cord(73,11);
+    printf(BBLU"%c",192);
+    for(int i = 0; i<7; i++)
+    {
+        printf("%c",196);
+    }
+    printf("%c",217);
+    cord(81,10);
+    printf("%c"reset,179);
+
+
+
+     //fb friends
+    cord(83,9);
+    printf(BBLU"%c",218);
+    for(int i = 0; i<10; i++)
+    {
+        printf("%c",196);
+    }
+    printf("%c",191);
+    cord(83,10);
+    printf("%c"reset,179);
+    cord(85,10);
+    printf("Friends");
+    cord(83,11);
+    printf(BBLU"%c",192);
+    for(int i = 0; i<10; i++)
+    {
+        printf("%c",196);
+    }
+    printf("%c",217);
+    cord(94,10);
+    printf("%c"reset,179);
+
+
+
+    //post section
+    cord(10,15);
+    printf(WHTB"%c",218);
+    for(int i = 0; i<75; i++)
+    {
+        printf("%c",196);
+    }
+    printf("%c",191);
+    cord(10,16);
+    printf("%c",179);
+    cord(10,17);
+    printf("%c",192);
+
+    for(int i = 0; i<75; i++)
+    {
+        printf("%c",196);
+    }
+    printf("%c",217);
+
+     cord(11,16);
+     for(int i = 0; i<75; i++)
+    {
+        printf("%c",179);
+    }
+
+    cord(86,16);
+    printf("%c"reset,179);
+
+    cord(12,16);
+    printf(BBLK WHTB"What's on your mind?"reset);
+
+
+    //post
+   cord(88,15);
+    printf(BBLU"%c",218);
+    for(int i = 0; i<10; i++)
+    {
+        printf("%c",196);
+    }
+    printf("%c",191);
+    cord(88,16);
+    printf("%c",179);
+    cord(88,17);
+    printf(BBLU"%c",192);
+    for(int i = 0; i<10; i++)
+    {
+        printf("%c",196);
+    }
+    printf("%c",217);
+    cord(99,16);
+    printf("%c"reset,179);
+
+    cord(91,16);
+    printf("Post");
+
+
+
+     //posting blog
+    cord(10,19);
+    printf(BWHT"%c",218);
+    for(int i = 0; i<85; i++)
+    {
+        printf("%c",196);
+    }
+    printf("%c",191);
+
+    cord(10,20);
+    printf("%c",179);
+    cord(10,21);
+    printf("%c",179);
+    cord(10,22);
+    printf("%c",179);
+    cord(10,23);
+    printf("%c",179);
+    cord(10,24);
+    printf("%c",179);
+
+
+    cord(10,25);
+    printf("%c",192);
+
+    for(int i = 0; i<85; i++)
+    {
+        printf("%c",196);
+    }
+    printf("%c",217);
+
+
+    cord(96,20);
+    printf("%c",179);
+    cord(96,21);
+    printf("%c",179);
+    cord(96,22);
+    printf("%c",179);
+    cord(96,23);
+    printf("%c",179);
+    cord(96,24);
+    printf("%c"reset,179);
+
+
+    cord(12,20);
+    printf(BWHT"Daffodil International University"reset);
+    cord(12,22);
+    printf("Welcome to all the fresher of Spring 2025.");
+
+
+
+
+
+    //menu box
+        cord(98,25);
+    printf(CYN"%c",218);
+    for(int i=0; i<15; i++)
+    {
+        printf("%c",196);
+    }
+
+    cord(98,27);
+    printf("%c",192);
+    for(int i=0; i<15; i++)
+    {
+        printf("%c",196);
+    }
+    cord(114,25);
+    printf("%c",191);
+    cord(114,27);
+    printf("%c",217);
+    cord(114,26);
+    printf("%c",179);
+    cord(98,26);
+    printf("%c"reset,179);
+
+    cord(103,26);
+    printf("4. Menu");
 
 }
 
@@ -1892,3 +2446,20 @@ void gmail()
 {
 
 }
+
+void allHistory()
+{
+
+}
+
+void deleteAllHistory()
+{
+
+}
+
+void searchHistory()
+{
+
+}
+
+
