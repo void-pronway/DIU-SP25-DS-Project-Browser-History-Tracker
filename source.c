@@ -641,7 +641,7 @@ void menuPage()
     //1st
 
     cord(6,2);
-    printf("%c",218);
+    printf(CYN"%c",218);
 
     for(int i=1;i<=13;i++){
         printf("%c",196);
@@ -668,9 +668,14 @@ void menuPage()
     cord(6,5);
     printf("%c",192);
 
+    cord(9,3);
+    printf(MAG"(1) "WHT"Menu"reset);
+    cord(9,4);
+    printf(MAG"(2) "WHT"Home"reset);
+
     //2nd
     cord(6,7);
-    printf("%c",218);
+    printf(CYN"%c",218);
 
     for(int i=1;i<=13;i++){
         printf("%c",196);
@@ -705,13 +710,14 @@ void menuPage()
     cord(6,12);
     printf("%c",192);
 
-    cord(11,9); printf("All");
-    cord(9,10); printf("History");
+    cord(11,9); printf(WHT"All");
+    cord(9,10); printf("History"reset);
+    cord(11,13); printf(MAG"(3)"reset);
 
     //3rd
 
     cord(6,14);
-    printf("%c",218);
+    printf(CYN"%c",218);
 
     for(int i=1;i<=13;i++){
         printf("%c",196);
@@ -816,7 +822,7 @@ void menuPage()
     cord(20,3);
     printf("%c",179);
     cord(20,4);
-    printf("%c"reset,192);
+    printf("%c",192);
 
     //doted line
     cord(20,5);
@@ -844,7 +850,7 @@ void menuPage()
     cord(20,24);
     printf("%c",179);
     cord(20,26);
-    printf("%c",179);
+    printf("%c"reset,179);
 
 
 
