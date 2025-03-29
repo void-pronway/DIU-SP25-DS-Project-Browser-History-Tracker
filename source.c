@@ -12,8 +12,8 @@ typedef struct history{
     int order;
     char url[50];
     char urlName[50];
+    char tnstr[20];
     time_t  s;
-    struct tm* current_time;
     struct history *prev;
     struct history *next;
 }node;
