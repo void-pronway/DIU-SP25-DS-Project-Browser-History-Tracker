@@ -18,6 +18,11 @@ typedef struct history{
     struct history *next;
 }node;
 
+//function for DLL
+void insert();
+void del();
+void search();
+
 //function prototype for our program
 void homePage();
 void searchPage(char *url);
@@ -54,8 +59,8 @@ void gmail();  //mashfiq
 
 int main()
 {
-    char continueChoice,url[50];
-    int choice;
+    char continueChoice;
+    //int choice;
     start();
     loadFromFile();
 
@@ -64,62 +69,6 @@ int main()
     do{
         system("cls");
         homePage();
-        choice=optionChoice();
-        fflush(stdin);
-
-        switch(choice){
-        case 1:
-            searchPage(url);
-            if(strcmp(url,"home")==0){
-                continue;
-            }
-            else if(strcmp(url,"diu.edu.bd")==0){              // insert func er kaaj baki ekhane
-                diu();
-            }
-            else if(strcmp(url,"elearn.daffodilvarsity.edu.bd")==0){
-                blc();
-            }
-            else if(strcmp(url,"codeforces.com")==0){
-                cf();
-            }
-            else if(strcmp(url,"facebook.com")==0){
-                fb();
-            }
-            else if(strcmp(url,"youtube.com")==0){
-                yt();
-            }
-            else if(strcmp(url,"x.com")==0){
-                x();
-            }
-            else if(strcmp(url,"gmail.com")==0){
-                gmail();
-            }
-            else{
-                error_p();
-                break;
-            }
-            break;
-        case 2:
-            fb();
-            break;
-        case 3:
-            blc();
-            break;
-        case 4:
-            diu();
-            break;
-        case 5:
-            cf();
-            break;
-        case 6:
-            menuPage();
-            break;
-        default:
-            system("cls");
-            error();
-
-        }
-
 
         cord(40,26);
         printf(CYN"Do you want go to the HomePage?"WHT"(y/n)"reset);
@@ -468,6 +417,7 @@ void searchPage(char *url)
 
 void homePage()
 {
+    system("cls");
 
     box();
     print_ByteSurf();
@@ -631,6 +581,64 @@ void homePage()
     printf("6. Menu");
 
 
+    char url[50];
+    int choice=optionChoice();
+        fflush(stdin);
+
+        switch(choice){
+        case 1:
+            searchPage(url);
+            if(strcmp(url,"home")==0){
+                homePage();
+            }
+            else if(strcmp(url,"diu.edu.bd")==0){              // insert func er kaaj baki ekhane
+                diu();
+            }
+            else if(strcmp(url,"elearn.daffodilvarsity.edu.bd")==0){
+                blc();
+            }
+            else if(strcmp(url,"codeforces.com")==0){
+                cf();
+            }
+            else if(strcmp(url,"facebook.com")==0){
+                fb();
+            }
+            else if(strcmp(url,"youtube.com")==0){
+                yt();
+            }
+            else if(strcmp(url,"x.com")==0){
+                x();
+            }
+            else if(strcmp(url,"gmail.com")==0){
+                gmail();
+            }
+            else{
+                error_p();
+                break;
+            }
+            break;
+        case 2:
+            fb();
+            break;
+        case 3:
+            blc();
+            break;
+        case 4:
+            diu();
+            break;
+        case 5:
+            cf();
+            break;
+        case 6:
+            menuPage();
+            break;
+        default:
+            system("cls");
+            error();
+
+        }
+
+
 }
 
 void menuPage()
@@ -668,10 +676,10 @@ void menuPage()
     cord(6,5);
     printf("%c",192);
 
-    cord(9,3);
-    printf(MAG"(1) "WHT"Menu"reset);
+    cord(11,3);
+    printf(WHT"Menu"reset);
     cord(9,4);
-    printf(MAG"(2) "WHT"Home"reset);
+    printf(MAG"(1) "WHT"Home"reset);
 
     //2nd
     cord(6,7);
@@ -712,7 +720,7 @@ void menuPage()
 
     cord(11,9); printf(WHT"All");
     cord(9,10); printf("History"reset);
-    cord(11,13); printf(MAG"(3)"reset);
+    cord(11,13); printf(MAG"(2)"reset);
 
     //3rd
 
@@ -752,13 +760,14 @@ void menuPage()
     cord(6,19);
     printf("%c",192);
 
-    cord(10,16); printf("Clear");
+    cord(10,16); printf(WHT"Clear");
     cord(9,17); printf("History");
+    cord(11,20); printf(MAG"(3)");
 
     //4th
 
     cord(6,21);
-    printf("%c",218);
+    printf(CYN"%c",218);
 
     for(int i=1;i<=13;i++){
         printf("%c",196);
@@ -793,8 +802,9 @@ void menuPage()
     cord(6,26);
     printf("%c",192);
 
-    cord(11,23); printf("Find");
+    cord(11,23); printf(WHT"Find");
     cord(9,24); printf("History");
+    cord(11,27); printf(MAG"(4)");
 
     //choice
     int choiceMenu;
@@ -862,14 +872,16 @@ void menuPage()
 
     switch(choiceMenu){
     case 1:
-        allHistory();
+        homePage();
         break;
     case 2:
-        deleteAllHistory();
+        allHistory();
         break;
     case 3:
-        searchHistory();
+        deleteAllHistory();
         break;
+    case 4:
+        searchHistory();
     default:
         printf("Invalid");
     }
