@@ -1,154 +1,215 @@
 #include<stdio.h>
-#include "colors.h"
-#include<windows.h>
+#include<stdlib.h>
+#include<string.h>
+#include<time.h>
+#include<conio.h>
 
-void error()
-{
-    system("cls");
-    box();
-    cord(40,15);
-    printf("Our Budget is not Enough to Show You This Page");
-    cord(50,16);
-    //printf(":("reset);
+#define MAX_NODES 5
 
-}
+typedef struct std {
+    char name[20];
+    int id;
+    char sec;
+    time_t tm;
+    char tmstr[20];
+    struct std *next;
+    struct std *prev;
+} node;
 
-void cord(int x, int y)
-{
-    COORD crd;
-    crd.X=x;
-    crd.Y=y;
-    SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE),crd);
-}
+void insert(node **start, char name[], int id, char sec);
+void del(node **start);
+void printReverse(node *start);
+void printSingle(node *current);
+node* goFrwd(node *current);
+node* goPrev(node *current);
+int countNodes(node *start);
 
-void box()//inside width 111
-{
-    cord(4,1);
-    printf(CYN"%c",201);
-    for(int i=0;i<111;i++){
-        printf("%c",205);
+int main() {
+    node *start = NULL;
+    node *current = NULL;
+    int n, id;
+    char name[20], sec, ch;
+
+    while(1) {
+        system("cls");
+        printf("1. Insert\n");
+        printf("2. Delete\n");
+        printf("3. Print All (Most Recent First)\n");
+        printf("4. Navigate Forward\n");
+        printf("5. Navigate Backward\n");
+        printf("6. Print Current\n");
+        printf("Enter your choice: ");
+        scanf("%d", &n);
+
+        switch(n) {
+        case 1:
+            fflush(stdin);
+            printf("Name: ");
+            scanf("%[^\n]", name);
+            getchar();
+            printf("ID: ");
+            scanf("%d", &id);
+            fflush(stdin);
+            printf("Section: ");
+            scanf("%c", &sec);
+            getchar();
+            insert(&start, name, id, sec);
+            // Set current to the newly added node
+            current = start;
+            while(current->next != NULL) current = current->next;
+            break;
+        case 2:
+            del(&start);
+            if(start == NULL) current = NULL;
+            break;
+        case 3:
+            {
+                int count = countNodes(start);
+                printf("\nTotal records: %d\n", count);
+                printReverse(start);
+                break;
+            }
+        case 4:
+            if(current == NULL) {
+                printf("No records available!\n");
+            } else {
+                current = goFrwd(current);
+                printSingle(current);
+            }
+            break;
+        case 5:
+            if(current == NULL) {
+                printf("No records available!\n");
+            } else {
+                current = goPrev(current);
+                printSingle(current);
+            }
+            break;
+        case 6:
+            {
+                int count = countNodes(start);
+                printf("\nCurrent record (%d of %d):\n",
+                       (current ? current->id : 0), count);
+                printSingle(current);
+                break;
+            }
+        default:
+            printf("Error!\n");
+        }
+
+        printf("\nPress any key to continue...");
+        getch();
     }
-
-    printf("%c",187);
-    cord(116,2);
-    printf("%c",186);
-    cord(116,3);
-    printf("%c",186);
-    cord(116,4);
-    printf("%c",186);
-    cord(116,5);
-    printf("%c",186);
-    cord(116,6);
-    printf("%c",186);
-    cord(116,7);
-    printf("%c",186);
-    cord(116,8);
-    printf("%c",186);
-    cord(116,9);
-    printf("%c",186);
-    cord(116,10);
-    printf("%c",186);
-    cord(116,11);
-    printf("%c",186);
-    cord(116,12);
-    printf("%c",186);
-    cord(116,13);
-    printf("%c",186);
-    cord(116,14);
-    printf("%c",186);
-    cord(116,15);
-    printf("%c",186);
-    cord(116,16);
-    printf("%c",186);
-    cord(116,17);
-    printf("%c",186);
-    cord(116,18);
-    printf("%c",186);
-    cord(116,19);
-    printf("%c",186);
-    cord(116,20);
-    printf("%c",186);
-    cord(116,21);
-    printf("%c",186);
-    cord(116,22);
-    printf("%c",186);
-    cord(116,23);
-    printf("%c",186);
-    cord(116,24);
-    printf("%c",186);
-    cord(116,25);
-    printf("%c",186);
-    cord(116,26);
-    printf("%c",186);
-    cord(116,27);
-    printf("%c",186);
-
-    cord(116,28);
-    printf("%c",188);
-    cord(5,28);
-    for(int i=0;i<111;i++){
-        printf("%c",205);
-    }
-    cord(4,28);
-    printf("%c",200);
-
-    cord(4,2);
-    printf("%c",186);
-    cord(4,3);
-    printf("%c",186);
-    cord(4,4);
-    printf("%c",186);
-    cord(4,5);
-    printf("%c",186);
-    cord(4,6);
-    printf("%c",186);
-    cord(4,7);
-    printf("%c",186);
-    cord(4,8);
-    printf("%c",186);
-    cord(4,9);
-    printf("%c",186);
-    cord(4,10);
-    printf("%c",186);
-    cord(4,11);
-    printf("%c",186);
-    cord(4,12);
-    printf("%c",186);
-    cord(4,13);
-    printf("%c",186);
-    cord(4,14);
-    printf("%c",186);
-    cord(4,15);
-    printf("%c",186);
-    cord(4,16);
-    printf("%c",186);
-    cord(4,17);
-    printf("%c",186);
-    cord(4,18);
-    printf("%c",186);
-    cord(4,19);
-    printf("%c",186);
-    cord(4,20);
-    printf("%c",186);
-    cord(4,21);
-    printf("%c",186);
-    cord(4,22);
-    printf("%c",186);
-    cord(4,23);
-    printf("%c",186);
-    cord(4,24);
-    printf("%c",186);
-    cord(4,25);
-    printf("%c",186);
-    cord(4,26);
-    printf("%c",186);
-    cord(4,27);
-    printf("%c"reset,186);
-}
-
-int main()
-{
-    box();
 
     return 0;
+}
+
+void insert(node **start, char name[], int id, char sec) {
+    int nodeCount = countNodes(*start);
+
+    if(nodeCount >= MAX_NODES) {
+        del(start);
+    }
+
+    node *newnode = (node*)malloc(sizeof(node));
+    strcpy(newnode->name, name);
+    newnode->id = id;
+    newnode->sec = sec;
+    time(&newnode->tm);
+    struct tm* local = localtime(&newnode->tm);
+    strftime(newnode->tmstr, sizeof(newnode->tmstr), "%a %I:%M %p", local);
+    newnode->next = NULL;
+
+    if(*start == NULL) {
+        newnode->prev = NULL;
+        *start = newnode;
+    } else {
+        node *ptr = *start;
+        while(ptr->next != NULL) {
+            ptr = ptr->next;
+        }
+        ptr->next = newnode;
+        newnode->prev = ptr;
+    }
+}
+
+void del(node **start) {
+    if(*start == NULL) {
+        printf("List is empty!\n");
+        return;
+    }
+
+    node *temp = *start;
+    *start = (*start)->next;
+    if(*start != NULL) {
+        (*start)->prev = NULL;
+    }
+    free(temp);
+}
+
+void printReverse(node *start) {
+    if(start == NULL) {
+        printf("List is empty!\n");
+        return;
+    }
+
+    node *ptr = start;
+    while(ptr->next != NULL) {
+        ptr = ptr->next;
+    }
+
+    int count = 1;
+    while(ptr != NULL) {
+        printf("\nRecord %d:\n", count++);
+        printf("Name: %s\n", ptr->name);
+        printf("ID: %d\n", ptr->id);
+        printf("Section: %c\n", ptr->sec);
+        printf("Time: %s\n", ptr->tmstr);
+        ptr = ptr->prev;
+    }
+}
+
+void printSingle(node *current) {
+    if(current == NULL) {
+        printf("No record selected!\n");
+        return;
+    }
+
+    printf("\nCurrent Record:\n");
+    printf("Name: %s\n", current->name);
+    printf("ID: %d\n", current->id);
+    printf("Section: %c\n", current->sec);
+    printf("Time: %s\n", current->tmstr);
+}
+
+node* goFrwd(node *current) {
+    if(current == NULL) return NULL;
+
+    if(current->next != NULL) {
+        return current->next;
+    } else {
+        printf("Already at the last record.\n");
+        return current;
+    }
+}
+
+node* goPrev(node *current) {
+    if(current == NULL) return NULL;
+
+    if(current->prev != NULL) {
+        return current->prev;
+    } else {
+        printf("Already at the first record.\n");
+        return current;
+    }
+}
+
+int countNodes(node *start) {
+    int count = 0;
+    node *ptr = start;
+    while(ptr != NULL) {
+        count++;
+        ptr = ptr->next;
+    }
+    return count;
 }
