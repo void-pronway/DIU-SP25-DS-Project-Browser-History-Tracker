@@ -969,7 +969,9 @@ void diu()
     printf("%c",191);
     cord(5,3);
     printf("%c"reset,179);
-    printf(" Prev ");
+
+    printf(BMAG"1."WHT"Prev");
+
     cord(5,4);
     printf(CYN"%c",192);
     for(int i = 0; i<6; i++)
@@ -990,7 +992,7 @@ void diu()
     printf("%c",191);
     cord(13,3);
     printf("%c"reset,179);
-    printf(" Next ");
+     printf(BMAG"2."WHT"Next");
     cord(13,4);
     printf(CYN"%c",192);
     for(int i = 0; i<6; i++)
@@ -1011,7 +1013,7 @@ void diu()
     printf("%c",191);
     cord(21,3);
     printf("%c"reset,179);
-    printf(" URL: ");
+    printf("URL: ");
     cord(21,4);
     printf(CYN"%c",192);
     for(int i = 0; i<56; i++)
@@ -1025,17 +1027,39 @@ void diu()
     //Search box
     cord(79,2);
     printf(CYN"%c",218);
-    for(int i = 0; i<35; i++)
+    for(int i = 0; i<17; i++)
     {
         printf("%c",196);
     }
     printf("%c",191);
     cord(79,3);
     printf("%c"reset,179);
-    printf(" Search: ");
+    printf(BMAG"3." WHT" Search ");
     cord(79,4);
     printf(CYN"%c",192);
-    for(int i = 0; i<35; i++)
+    for(int i = 0; i<17; i++)
+    {
+        printf("%c",196);
+    }
+    printf("%c",217);
+    cord(97,3);
+    printf("%c"reset,179);
+
+
+    //Choice box
+    cord(98,2);
+    printf(CYN"%c",218);
+    for(int i = 0; i<16; i++)
+    {
+        printf("%c",196);
+    }
+    printf("%c",191);
+    cord(98,3);
+    printf("%c"reset,179);
+    printf(" Choice: ");
+    cord(98,4);
+    printf(CYN"%c",192);
+    for(int i = 0; i<16; i++)
     {
         printf("%c",196);
     }
@@ -1256,12 +1280,81 @@ void diu()
     printf("%c"reset,179);
 
     cord(103,26);
-    printf("5. Menu");
+    printf(BMAG"4."WHT" Menu");
 
     cord(28,3);
     printf(BWHT"diu.edu.bd"reset);
 
+
+
+    //taking choice
+    char url[50];
+    int choice;
+    cord(108,3);
+    scanf("%d", &choice);
+
+    switch(choice)
+    {
+    case 1:
+        goPrev();
+        break;
+    case 2:
+        goFrwd();
+        break;
+    case 3:
+        searchPage(url);
+        if(strcmp(url,"home")==0)
+        {
+            homePage();
+        }
+        else if(strcmp(url,"diu.edu.bd")==0)               // insert func er kaaj baki ekhane
+        {
+            diu();
+        }
+        else if(strcmp(url,"elearn.daffodilvarsity.edu.bd")==0)
+        {
+            blc();
+        }
+        else if(strcmp(url,"codeforces.com")==0)
+        {
+            cf();
+        }
+        else if(strcmp(url,"facebook.com")==0)
+        {
+            fb();
+        }
+        else if(strcmp(url,"youtube.com")==0)
+        {
+            yt();
+        }
+        else if(strcmp(url,"x.com")==0)
+        {
+            x();
+        }
+        else if(strcmp(url,"gmail.com")==0)
+        {
+            gmail();
+        }
+        else
+        {
+            error_p();
+            break;
+        }
+        break;
+        break;
+    case 4:
+        menuPage();
+        break;
+
+    default:
+        system("cls");
+        error();
+
+    }
+
+
 }
+
 
 void cf()
 {
@@ -1277,7 +1370,7 @@ void cf()
     printf("%c",191);
     cord(5,3);
     printf("%c"reset,179);
-    printf(" Prev ");
+    printf(BMAG"1."WHT"Prev");
     cord(5,4);
     printf(CYN"%c",192);
     for(int i = 0; i<6; i++)
@@ -1298,7 +1391,7 @@ void cf()
     printf("%c",191);
     cord(13,3);
     printf("%c"reset,179);
-    printf(" Next ");
+    printf(BMAG"2."WHT"Next");
     cord(13,4);
     printf(CYN"%c",192);
     for(int i = 0; i<6; i++)
@@ -1330,27 +1423,49 @@ void cf()
     cord(78,3);
     printf("%c"reset,179);
 
-    //Search box
+
+   //Search box
     cord(79,2);
     printf(CYN"%c",218);
-    for(int i = 0; i<35; i++)
+    for(int i = 0; i<17; i++)
     {
         printf("%c",196);
     }
     printf("%c",191);
     cord(79,3);
     printf("%c"reset,179);
-    printf(" Search: ");
+    printf(BMAG"3. "WHT"Search ");
     cord(79,4);
     printf(CYN"%c",192);
-    for(int i = 0; i<35; i++)
+    for(int i = 0; i<17; i++)
+    {
+        printf("%c",196);
+    }
+    printf("%c",217);
+    cord(97,3);
+    printf("%c"reset,179);
+
+
+    //Choice box
+    cord(98,2);
+    printf(CYN"%c",218);
+    for(int i = 0; i<16; i++)
+    {
+        printf("%c",196);
+    }
+    printf("%c",191);
+    cord(98,3);
+    printf("%c"reset,179);
+    printf(" Choice: ");
+    cord(98,4);
+    printf(CYN"%c",192);
+    for(int i = 0; i<16; i++)
     {
         printf("%c",196);
     }
     printf("%c",217);
     cord(115,3);
     printf("%c"reset,179);
-
 
 
     //logo
@@ -1608,8 +1723,8 @@ void cf()
     cord(7,24);
     printf("expertise.");
 
-        //menu box
-        cord(98,25);
+    //menu box
+    cord(98,25);
     printf(CYN"%c",218);
     for(int i=0; i<15; i++)
     {
@@ -1632,10 +1747,77 @@ void cf()
     printf("%c"reset,179);
 
     cord(103,26);
-    printf("4. Menu");
+    printf(BMAG"4."WHT" Menu");
 
     cord(28,3);
     printf(BWHT"codeforces.com"reset);
+
+
+    //taking choice
+    char url[50];
+    int choice;
+    cord(108,3);
+    scanf("%d", &choice);
+
+    switch(choice)
+    {
+    case 1:
+        goPrev();
+        break;
+    case 2:
+        goFrwd();
+        break;
+    case 3:
+        searchPage(url);
+        if(strcmp(url,"home")==0)
+        {
+            homePage();
+        }
+        else if(strcmp(url,"diu.edu.bd")==0)               // insert func er kaaj baki ekhane
+        {
+            diu();
+        }
+        else if(strcmp(url,"elearn.daffodilvarsity.edu.bd")==0)
+        {
+            blc();
+        }
+        else if(strcmp(url,"codeforces.com")==0)
+        {
+            cf();
+        }
+        else if(strcmp(url,"facebook.com")==0)
+        {
+            fb();
+        }
+        else if(strcmp(url,"youtube.com")==0)
+        {
+            yt();
+        }
+        else if(strcmp(url,"x.com")==0)
+        {
+            x();
+        }
+        else if(strcmp(url,"gmail.com")==0)
+        {
+            gmail();
+        }
+        else
+        {
+            error_p();
+            break;
+        }
+        break;
+        break;
+    case 4:
+        menuPage();
+        break;
+
+    default:
+        system("cls");
+        error();
+
+    }
+
 
 }
 
@@ -1656,7 +1838,7 @@ void blc()
     printf("%c",191);
     cord(5,3);
     printf("%c"reset,179);
-    printf(" Prev ");
+    printf(BMAG"1."WHT"Prev");
     cord(5,4);
     printf(CYN"%c",192);
     for(int i = 0; i<6; i++)
@@ -1677,7 +1859,7 @@ void blc()
     printf("%c",191);
     cord(13,3);
     printf("%c"reset,179);
-    printf(" Next ");
+    printf(BMAG"2."WHT"Next");
     cord(13,4);
     printf(CYN"%c",192);
     for(int i = 0; i<6; i++)
@@ -1709,27 +1891,49 @@ void blc()
     cord(78,3);
     printf("%c"reset,179);
 
-    //Search box
+
+   //Search box
     cord(79,2);
     printf(CYN"%c",218);
-    for(int i = 0; i<35; i++)
+    for(int i = 0; i<17; i++)
     {
         printf("%c",196);
     }
     printf("%c",191);
     cord(79,3);
     printf("%c"reset,179);
-    printf(" Search: ");
+    printf(BMAG"3. "WHT"Search ");
     cord(79,4);
     printf(CYN"%c",192);
-    for(int i = 0; i<35; i++)
+    for(int i = 0; i<17; i++)
+    {
+        printf("%c",196);
+    }
+    printf("%c",217);
+    cord(97,3);
+    printf("%c"reset,179);
+
+
+    //Choice box
+    cord(98,2);
+    printf(CYN"%c",218);
+    for(int i = 0; i<16; i++)
+    {
+        printf("%c",196);
+    }
+    printf("%c",191);
+    cord(98,3);
+    printf("%c"reset,179);
+    printf(" Choice: ");
+    cord(98,4);
+    printf(CYN"%c",192);
+    for(int i = 0; i<16; i++)
     {
         printf("%c",196);
     }
     printf("%c",217);
     cord(115,3);
     printf("%c"reset,179);
-
 
 
 
@@ -1967,7 +2171,7 @@ void blc()
     printf("%c"reset,179);
 
 
-   //some text
+    //some text
     cord(34,14);
     printf("Welcome to DIU Blending Learning Center.");
     cord(34,17);
@@ -1979,8 +2183,8 @@ void blc()
     cord(34,20);
     printf("progress of individual students and better facilitate their learning.");
 
-     //menu box
-        cord(98,25);
+    //menu box
+    cord(98,25);
     printf(CYN"%c",218);
     for(int i=0; i<15; i++)
     {
@@ -2003,12 +2207,80 @@ void blc()
     printf("%c"reset,179);
 
     cord(103,26);
-    printf("4. Menu");
+    printf(BMAG"4."WHT" Menu");
 
     cord(28,3);
     printf(BWHT"elearn.daffodilvarsity.edu.bd"reset);
 
+
+    //taking choice
+    char url[50];
+    int choice;
+    cord(108,3);
+    scanf("%d", &choice);
+
+    switch(choice)
+    {
+    case 1:
+        goPrev();
+        break;
+    case 2:
+        goFrwd();
+        break;
+    case 3:
+        searchPage(url);
+        if(strcmp(url,"home")==0)
+        {
+            homePage();
+        }
+        else if(strcmp(url,"diu.edu.bd")==0)               // insert func er kaaj baki ekhane
+        {
+            diu();
+        }
+        else if(strcmp(url,"elearn.daffodilvarsity.edu.bd")==0)
+        {
+            blc();
+        }
+        else if(strcmp(url,"codeforces.com")==0)
+        {
+            cf();
+        }
+        else if(strcmp(url,"facebook.com")==0)
+        {
+            fb();
+        }
+        else if(strcmp(url,"youtube.com")==0)
+        {
+            yt();
+        }
+        else if(strcmp(url,"x.com")==0)
+        {
+            x();
+        }
+        else if(strcmp(url,"gmail.com")==0)
+        {
+            gmail();
+        }
+        else
+        {
+            error_p();
+            break;
+        }
+        break;
+        break;
+    case 4:
+        menuPage();
+        break;
+
+    default:
+        system("cls");
+        error();
+
+    }
+
+
 }
+
 
 void error_p()
 {
@@ -2073,7 +2345,7 @@ void fb()
     printf("%c",191);
     cord(5,3);
     printf("%c"reset,179);
-    printf(" Prev ");
+    printf(BMAG"1."WHT"Prev");
     cord(5,4);
     printf(CYN"%c",192);
     for(int i = 0; i<6; i++)
@@ -2094,7 +2366,7 @@ void fb()
     printf("%c",191);
     cord(13,3);
     printf("%c"reset,179);
-    printf(" Next ");
+    printf(BMAG"2."WHT"Next");
     cord(13,4);
     printf(CYN"%c",192);
     for(int i = 0; i<6; i++)
@@ -2126,27 +2398,49 @@ void fb()
     cord(78,3);
     printf("%c"reset,179);
 
-    //Search box
+
+   //Search box
     cord(79,2);
     printf(CYN"%c",218);
-    for(int i = 0; i<35; i++)
+    for(int i = 0; i<17; i++)
     {
         printf("%c",196);
     }
     printf("%c",191);
     cord(79,3);
     printf("%c"reset,179);
-    printf(" Search: ");
+    printf(BMAG"3."WHT"Search");
     cord(79,4);
     printf(CYN"%c",192);
-    for(int i = 0; i<35; i++)
+    for(int i = 0; i<17; i++)
+    {
+        printf("%c",196);
+    }
+    printf("%c",217);
+    cord(97,3);
+    printf("%c"reset,179);
+
+
+    //Choice box
+    cord(98,2);
+    printf(CYN"%c",218);
+    for(int i = 0; i<16; i++)
+    {
+        printf("%c",196);
+    }
+    printf("%c",191);
+    cord(98,3);
+    printf("%c"reset,179);
+    printf(" Choice: ");
+    cord(98,4);
+    printf(CYN"%c",192);
+    for(int i = 0; i<16; i++)
     {
         printf("%c",196);
     }
     printf("%c",217);
     cord(115,3);
     printf("%c"reset,179);
-
 
     //logo
     cord(8,6);
@@ -2186,7 +2480,7 @@ void fb()
     printf("%c"reset,179);
 
 
-   //fb Home
+    //fb Home
     cord(20,9);
     printf(BBLU"%c",218);
     for(int i = 0; i<7; i++)
@@ -2302,7 +2596,7 @@ void fb()
 
 
 
-     //fb friends
+    //fb friends
     cord(83,9);
     printf(BBLU"%c",218);
     for(int i = 0; i<10; i++)
@@ -2345,8 +2639,8 @@ void fb()
     }
     printf("%c",217);
 
-     cord(11,16);
-     for(int i = 0; i<75; i++)
+    cord(11,16);
+    for(int i = 0; i<75; i++)
     {
         printf("%c",179);
     }
@@ -2359,7 +2653,7 @@ void fb()
 
 
     //post
-   cord(88,15);
+    cord(88,15);
     printf(BBLU"%c",218);
     for(int i = 0; i<10; i++)
     {
@@ -2383,7 +2677,7 @@ void fb()
 
 
 
-     //posting blog
+    //posting blog
     cord(10,19);
     printf(BWHT"%c",218);
     for(int i = 0; i<85; i++)
@@ -2436,7 +2730,7 @@ void fb()
 
 
     //menu box
-        cord(98,25);
+    cord(98,25);
     printf(CYN"%c",218);
     for(int i=0; i<15; i++)
     {
@@ -2459,7 +2753,73 @@ void fb()
     printf("%c"reset,179);
 
     cord(103,26);
-    printf("4. Menu");
+    printf(BMAG"4."WHT" Menu");
+
+
+    //taking choice
+    char url[50];
+    int choice;
+    cord(108,3);
+    scanf("%d", &choice);
+
+    switch(choice)
+    {
+    case 1:
+        goPrev();
+        break;
+    case 2:
+        goFrwd();
+        break;
+    case 3:
+        searchPage(url);
+        if(strcmp(url,"home")==0)
+        {
+            homePage();
+        }
+        else if(strcmp(url,"diu.edu.bd")==0)               // insert func er kaaj baki ekhane
+        {
+            diu();
+        }
+        else if(strcmp(url,"elearn.daffodilvarsity.edu.bd")==0)
+        {
+            blc();
+        }
+        else if(strcmp(url,"codeforces.com")==0)
+        {
+            cf();
+        }
+        else if(strcmp(url,"facebook.com")==0)
+        {
+            fb();
+        }
+        else if(strcmp(url,"youtube.com")==0)
+        {
+            yt();
+        }
+        else if(strcmp(url,"x.com")==0)
+        {
+            x();
+        }
+        else if(strcmp(url,"gmail.com")==0)
+        {
+            gmail();
+        }
+        else
+        {
+            error_p();
+            break;
+        }
+        break;
+    case 4:
+        menuPage();
+        break;
+
+    default:
+        system("cls");
+        error();
+
+    }
+
 
 }
 
@@ -2478,7 +2838,7 @@ void gmail()
     printf("%c",191);
     cord(5,3);
     printf("%c"reset,179);
-    printf(" Prev ");
+    printf(BMAG"1."WHT"Prev ");
     cord(5,4);
     printf(CYN"%c",192);
     for(int i = 0; i<6; i++)
@@ -2499,7 +2859,7 @@ void gmail()
     printf("%c",191);
     cord(13,3);
     printf("%c"reset,179);
-    printf(" Next ");
+    printf(BMAG"2."WHT"Next");
     cord(13,4);
     printf(CYN"%c",192);
     for(int i = 0; i<6; i++)
@@ -2531,26 +2891,50 @@ void gmail()
     cord(78,3);
     printf("%c"reset,179);
 
-    //Search box
+
+   //Search box
     cord(79,2);
     printf(CYN"%c",218);
-    for(int i = 0; i<35; i++)
+    for(int i = 0; i<17; i++)
     {
         printf("%c",196);
     }
     printf("%c",191);
     cord(79,3);
     printf("%c"reset,179);
-    printf(" Search: ");
+    printf(BMAG"3. "WHT"Search ");
     cord(79,4);
     printf(CYN"%c",192);
-    for(int i = 0; i<35; i++)
+    for(int i = 0; i<17; i++)
+    {
+        printf("%c",196);
+    }
+    printf("%c",217);
+    cord(97,3);
+    printf("%c"reset,179);
+
+
+    //Choice box
+    cord(98,2);
+    printf(CYN"%c",218);
+    for(int i = 0; i<16; i++)
+    {
+        printf("%c",196);
+    }
+    printf("%c",191);
+    cord(98,3);
+    printf("%c"reset,179);
+    printf(" Choice: ");
+    cord(98,4);
+    printf(CYN"%c",192);
+    for(int i = 0; i<16; i++)
     {
         printf("%c",196);
     }
     printf("%c",217);
     cord(115,3);
     printf("%c"reset,179);
+
 
     //logo
     cord(5,5);
@@ -2588,7 +2972,7 @@ void gmail()
     printf("%c"reset,179);
 
     //text
-     cord(7,12);
+    cord(7,12);
     printf( WHTB BBLK"    Inbox    "reset);
 
     cord(26,12);
@@ -2777,7 +3161,7 @@ void gmail()
     cord(114,21);
     printf("%c"reset,179);
 
-        //menu box
+    //menu box
     cord(98,25);
     printf(CYN"%c",218);
     for(int i=0; i<15; i++)
@@ -2801,11 +3185,80 @@ void gmail()
     printf("%c"reset,179);
 
     cord(103,26);
-    printf("4. Menu");
+    printf(BMAG"4."WHT" Menu");
+
+
+    //taking choice
+    char url[50];
+    int choice;
+    cord(108,3);
+    scanf("%d", &choice);
+
+    switch(choice)
+    {
+    case 1:
+        goPrev();
+        break;
+    case 2:
+        goFrwd();
+        break;
+    case 3:
+        searchPage(url);
+        if(strcmp(url,"home")==0)
+        {
+            homePage();
+        }
+        else if(strcmp(url,"diu.edu.bd")==0)               // insert func er kaaj baki ekhane
+        {
+            diu();
+        }
+        else if(strcmp(url,"elearn.daffodilvarsity.edu.bd")==0)
+        {
+            blc();
+        }
+        else if(strcmp(url,"codeforces.com")==0)
+        {
+            cf();
+        }
+        else if(strcmp(url,"facebook.com")==0)
+        {
+            fb();
+        }
+        else if(strcmp(url,"youtube.com")==0)
+        {
+            yt();
+        }
+        else if(strcmp(url,"x.com")==0)
+        {
+            x();
+        }
+        else if(strcmp(url,"gmail.com")==0)
+        {
+            gmail();
+        }
+        else
+        {
+            error_p();
+            break;
+        }
+        break;
+    case 4:
+        menuPage();
+        break;
+
+    default:
+        system("cls");
+        error();
+
+    }
+
+
 }
 
 
-void x() {
+
+void x()
+{
 
     system("cls");
     box();
@@ -2819,7 +3272,7 @@ void x() {
     printf("%c",191);
     cord(5,3);
     printf("%c"reset,179);
-    printf(" Prev ");
+    printf(BMAG"1."WHT"Prev");
     cord(5,4);
     printf(CYN"%c",192);
     for(int i = 0; i<6; i++)
@@ -2840,7 +3293,7 @@ void x() {
     printf("%c",191);
     cord(13,3);
     printf("%c"reset,179);
-    printf(" Next ");
+    printf(BMAG"2."WHT"Next");
     cord(13,4);
     printf(CYN"%c",192);
     for(int i = 0; i<6; i++)
@@ -2872,20 +3325,43 @@ void x() {
     cord(78,3);
     printf("%c"reset,179);
 
+
     //Search box
     cord(79,2);
     printf(CYN"%c",218);
-    for(int i = 0; i<35; i++)
+    for(int i = 0; i<17; i++)
     {
         printf("%c",196);
     }
     printf("%c",191);
     cord(79,3);
     printf("%c"reset,179);
-    printf(" Search: ");
+    printf(BMAG"3. "WHT"Search");
     cord(79,4);
     printf(CYN"%c",192);
-    for(int i = 0; i<35; i++)
+    for(int i = 0; i<17; i++)
+    {
+        printf("%c",196);
+    }
+    printf("%c",217);
+    cord(97,3);
+    printf("%c"reset,179);
+
+
+    //Choice box
+    cord(98,2);
+    printf(CYN"%c",218);
+    for(int i = 0; i<16; i++)
+    {
+        printf("%c",196);
+    }
+    printf("%c",191);
+    cord(98,3);
+    printf("%c"reset,179);
+    printf(" Choice: ");
+    cord(98,4);
+    printf(CYN"%c",192);
+    for(int i = 0; i<16; i++)
     {
         printf("%c",196);
     }
@@ -2914,7 +3390,8 @@ void x() {
     //  Twitter section 1
     cord(5, 13);
     printf(CYN "%c", 218);
-    for (int i = 0; i < 14; i++) {
+    for (int i = 0; i < 14; i++)
+    {
         printf("%c", 196);
     }
     printf("%c", 191);
@@ -2927,15 +3404,17 @@ void x() {
 
     cord(5, 15);
     printf(CYN "%c", 192);
-    for (int i = 0; i < 14; i++) {
+    for (int i = 0; i < 14; i++)
+    {
         printf("%c", 196);
     }
     printf("%c" reset, 217);
 
-     //  Twitter section 2
+    //  Twitter section 2
     cord(5, 16);
     printf(CYN "%c", 218);
-    for (int i = 0; i < 14; i++) {
+    for (int i = 0; i < 14; i++)
+    {
         printf("%c", 196);
     }
     printf("%c", 191);
@@ -2948,16 +3427,18 @@ void x() {
 
     cord(5, 18);
     printf(CYN "%c", 192);
-    for (int i = 0; i < 14; i++) {
+    for (int i = 0; i < 14; i++)
+    {
         printf("%c", 196);
     }
     printf("%c" reset, 217);
 
 
-     //  Twitter section 3
+    //  Twitter section 3
     cord(5, 19);
     printf(CYN "%c", 218);
-    for (int i = 0; i < 14; i++) {
+    for (int i = 0; i < 14; i++)
+    {
         printf("%c", 196);
     }
     printf("%c", 191);
@@ -2970,7 +3451,8 @@ void x() {
 
     cord(5, 21);
     printf(CYN "%c", 192);
-    for (int i = 0; i < 14; i++) {
+    for (int i = 0; i < 14; i++)
+    {
         printf("%c", 196);
     }
     printf("%c" reset, 217);
@@ -2979,7 +3461,8 @@ void x() {
     //  Twitter section 4
     cord(5, 22);
     printf(CYN "%c", 218);
-    for (int i = 0; i < 14; i++) {
+    for (int i = 0; i < 14; i++)
+    {
         printf("%c", 196);
     }
     printf("%c", 191);
@@ -2992,7 +3475,8 @@ void x() {
 
     cord(5, 24);
     printf(CYN "%c", 192);
-    for (int i = 0; i < 14; i++) {
+    for (int i = 0; i < 14; i++)
+    {
         printf("%c", 196);
     }
     printf("%c" reset, 217);
@@ -3024,7 +3508,7 @@ void x() {
     printf(" Trends for you ");
 
     //breaking news 1
-cord(79,9);
+    cord(79,9);
     printf(CYN"%c",218);
     for(int i = 0; i<35; i++)
     {
@@ -3046,15 +3530,15 @@ cord(79,9);
 
     //twitt 1
 
-        cord(79,11);
+    cord(79,11);
     printf(CYN"%c"reset,179);
-        cord(79,12);
+    cord(79,12);
     printf(CYN"%c"reset,179);
-        cord(79,13);
+    cord(79,13);
     printf(CYN"%c"reset,179);
-        cord(79,14);
+    cord(79,14);
     printf(CYN"%c"reset,179);
-        cord(79,15);
+    cord(79,15);
     printf(CYN"%c"reset,179);
 
     cord(79,16);
@@ -3075,21 +3559,21 @@ cord(79,9);
     cord(115,16);
     printf(CYN"%c"reset,217);
 
-        cord(115,11);
+    cord(115,11);
     printf(CYN"%c"reset,179);
-        cord(115,12);
+    cord(115,12);
     printf(CYN"%c"reset,179);
-        cord(115,13);
+    cord(115,13);
     printf(CYN"%c"reset,179);
-        cord(115,14);
+    cord(115,14);
     printf(CYN"%c"reset,179);
-        cord(115,15);
+    cord(115,15);
     printf(CYN"%c"reset,179);
 
 
 
     //breaking news 2
-cord(79,17);
+    cord(79,17);
     printf(CYN"%c",218);
     for(int i = 0; i<35; i++)
     {
@@ -3110,15 +3594,15 @@ cord(79,17);
     printf("%c"reset,179);
     //twitt
 
-        cord(79,19);
+    cord(79,19);
     printf(CYN"%c"reset,179);
-        cord(79,20);
+    cord(79,20);
     printf(CYN"%c"reset,179);
-        cord(79,21);
+    cord(79,21);
     printf(CYN"%c"reset,179);
-        cord(79,22);
+    cord(79,22);
     printf(CYN"%c"reset,179);
-        cord(79,23);
+    cord(79,23);
     printf(CYN"%c"reset,179);
 
     cord(79,24);
@@ -3141,15 +3625,15 @@ cord(79,17);
     cord(115,24);
     printf(CYN"%c"reset,217);
 
-        cord(115,19);
+    cord(115,19);
     printf(CYN"%c"reset,179);
-        cord(115,20);
+    cord(115,20);
     printf(CYN"%c"reset,179);
-        cord(115,21);
+    cord(115,21);
     printf(CYN"%c"reset,179);
-        cord(115,22);
+    cord(115,22);
     printf(CYN"%c"reset,179);
-        cord(115,23);
+    cord(115,23);
     printf(CYN"%c"reset,179);
 
     //Menu
@@ -3176,7 +3660,7 @@ cord(79,17);
     printf("%c"reset,179);
 
     cord(103,26);
-    printf("5. Menu");
+    printf(BMAG"4."WHT" Menu");
 
     //Whats happening
     cord(21,5);
@@ -3371,6 +3855,73 @@ cord(79,17);
     cord(29,24);
     printf("  to show yoy the picture...");
 
+
+
+    //taking choice
+    char url[50];
+    int choice;
+    cord(108,3);
+    scanf("%d", &choice);
+
+    switch(choice)
+    {
+    case 1:
+        goPrev();
+        break;
+    case 2:
+        goFrwd();
+        break;
+    case 3:
+        searchPage(url);
+        if(strcmp(url,"home")==0)
+        {
+            homePage();
+        }
+        else if(strcmp(url,"diu.edu.bd")==0)               // insert func er kaaj baki ekhane
+        {
+            diu();
+        }
+        else if(strcmp(url,"elearn.daffodilvarsity.edu.bd")==0)
+        {
+            blc();
+        }
+        else if(strcmp(url,"codeforces.com")==0)
+        {
+            cf();
+        }
+        else if(strcmp(url,"facebook.com")==0)
+        {
+            fb();
+        }
+        else if(strcmp(url,"youtube.com")==0)
+        {
+            yt();
+        }
+        else if(strcmp(url,"x.com")==0)
+        {
+            x();
+        }
+        else if(strcmp(url,"gmail.com")==0)
+        {
+            gmail();
+        }
+        else
+        {
+            error_p();
+            break;
+        }
+        break;
+    case 4:
+        menuPage();
+        break;
+
+    default:
+        system("cls");
+        error();
+
+    }
+
+
 }
 
 
@@ -3389,7 +3940,7 @@ void yt()
     printf("%c",191);
     cord(5,3);
     printf("%c"reset,179);
-    printf(" Prev ");
+    printf(BMAG"1."WHT"Prev");
     cord(5,4);
     printf(CYN"%c",192);
     for(int i = 0; i<6; i++)
@@ -3410,7 +3961,7 @@ void yt()
     printf("%c",191);
     cord(13,3);
     printf("%c"reset,179);
-    printf(" Next ");
+    printf(BMAG"2."WHT"Next");
     cord(13,4);
     printf(CYN"%c",192);
     for(int i = 0; i<6; i++)
@@ -3442,20 +3993,43 @@ void yt()
     cord(78,3);
     printf("%c"reset,179);
 
-    //Search box
+
+//Search box
     cord(79,2);
     printf(CYN"%c",218);
-    for(int i = 0; i<35; i++)
+    for(int i = 0; i<17; i++)
     {
         printf("%c",196);
     }
     printf("%c",191);
     cord(79,3);
     printf("%c"reset,179);
-    printf(" Search: ");
+    printf(BMAG"3. "WHT"Search ");
     cord(79,4);
     printf(CYN"%c",192);
-    for(int i = 0; i<35; i++)
+    for(int i = 0; i<17; i++)
+    {
+        printf("%c",196);
+    }
+    printf("%c",217);
+    cord(97,3);
+    printf("%c"reset,179);
+
+
+    //Choice box
+    cord(98,2);
+    printf(CYN"%c",218);
+    for(int i = 0; i<16; i++)
+    {
+        printf("%c",196);
+    }
+    printf("%c",191);
+    cord(98,3);
+    printf("%c"reset,179);
+    printf(" Choice: ");
+    cord(98,4);
+    printf(CYN"%c",192);
+    for(int i = 0; i<16; i++)
     {
         printf("%c",196);
     }
@@ -3491,7 +4065,7 @@ void yt()
     printf("    |_|\\___/ \\__,_");
     printf(RED"|_|\\__,_|_.__/ \\___|"reset);
 
-     cord(6,11);
+    cord(6,11);
     printf("                                      ");
 
     //search youtube box
@@ -3516,7 +4090,7 @@ void yt()
     cord(103,9);
     printf("%c"reset,179);
 
-    //diu section 1
+    //you tube 1
     cord(6,12);
     printf(RED"%c"reset,218);
     for(int i = 0; i<14; i++)
@@ -3537,7 +4111,7 @@ void yt()
     cord(21,13);
     printf(RED"%c"reset,179);
 
-    //diu section 2
+    // section 2
     cord(6,15);
     printf("%c",218);
     for(int i = 0; i<14; i++)
@@ -3558,7 +4132,7 @@ void yt()
     cord(21,16);
     printf("%c",179);
 
-    //diu section 3
+    // section 3
     cord(6,18);
     printf("%c",218);
     for(int i = 0; i<14; i++)
@@ -3579,7 +4153,7 @@ void yt()
     cord(21,19);
     printf("%c",179);
 
-    //diu section 4
+    //section 4
     cord(6,21);
     printf("%c",218);
     for(int i = 0; i<14; i++)
@@ -3637,7 +4211,7 @@ void yt()
     cord(56,13);
     printf("%c"reset,179);
 
-     cord(56,14);
+    cord(56,14);
     printf("%c"reset,179);
     cord(56,15);
     printf("%c"reset,179);
@@ -3685,9 +4259,9 @@ void yt()
     printf("%c"reset,217);
 
 
-     cord(56,20);
+    cord(56,20);
     printf("%c"reset,179);
-     cord(56,21);
+    cord(56,21);
     printf("%c"reset,179);
     cord(56,22);
     printf("%c"reset,179);
@@ -3697,7 +4271,7 @@ void yt()
     printf("%c"reset,179);
 
 
-  //thumbnail 3
+    //thumbnail 3
     cord(58,12);
     printf("%c",218);
     for(int i = 0; i<25; i++)
@@ -3737,7 +4311,7 @@ void yt()
 
     cord(84,13);
     printf("%c"reset,179);
-     cord(84,14);
+    cord(84,14);
     printf("%c"reset,179);
     cord(84,15);
     printf("%c"reset,179);
@@ -3748,7 +4322,7 @@ void yt()
 
 
 
-      //thumbnail 4
+    //thumbnail 4
     cord(58,19);
     printf("%c",218);
     for(int i = 0; i<25; i++)
@@ -3761,7 +4335,7 @@ void yt()
     cord(59,24);
     printf("%c Tesla New Project!",219);
 
-      cord(58,20);
+    cord(58,20);
     printf("%c"reset,179);
     cord(58,21);
     printf("%c"reset,179);
@@ -3782,9 +4356,9 @@ void yt()
     }
     printf("%c"reset,217);
 
-     cord(84,20);
+    cord(84,20);
     printf("%c"reset,179);
-     cord(84,21);
+    cord(84,21);
     printf("%c"reset,179);
     cord(84,22);
     printf("%c"reset,179);
@@ -3818,7 +4392,7 @@ void yt()
     printf("%c"reset,179);
 
     cord(103,26);
-    printf("5. Menu");
+    printf(BMAG"4."WHT" Menu");
 
     //filter
     cord(98,12);
@@ -3878,7 +4452,7 @@ void yt()
 
 
     //creat section
-       cord(98,18);
+    cord(98,18);
     printf(CYN"%c",218);
     for(int i=0; i<15; i++)
     {
@@ -3904,7 +4478,7 @@ void yt()
     printf(" Filter");
 
     //creat
-       cord(98,21);
+    cord(98,21);
     printf(CYN"%c",218);
     for(int i=0; i<15; i++)
     {
@@ -3929,8 +4503,76 @@ void yt()
     cord(103,22);
     printf("+ Create");
 
-}
 
+
+    //asking choice
+    char url[50];
+    int choice;
+    cord(108,3);
+    scanf("%d", &choice);
+
+    switch(choice)
+    {
+    case 1:
+        goPrev();
+        break;
+    case 2:
+        goFrwd();
+        break;
+    case 3:
+        searchPage(url);
+        if(strcmp(url,"home")==0)
+        {
+            homePage();
+        }
+        else if(strcmp(url,"diu.edu.bd")==0)               // insert func er kaaj baki ekhane
+        {
+            diu();
+        }
+        else if(strcmp(url,"elearn.daffodilvarsity.edu.bd")==0)
+        {
+            blc();
+        }
+        else if(strcmp(url,"codeforces.com")==0)
+        {
+            cf();
+        }
+        else if(strcmp(url,"facebook.com")==0)
+        {
+            fb();
+        }
+        else if(strcmp(url,"youtube.com")==0)
+        {
+            yt();
+        }
+        else if(strcmp(url,"x.com")==0)
+        {
+            x();
+        }
+        else if(strcmp(url,"gmail.com")==0)
+        {
+            gmail();
+        }
+        else
+        {
+            error_p();
+            break;
+        }
+        break;
+        break;
+    case 4:
+        menuPage();
+        break;
+
+    default:
+        system("cls");
+        error();
+
+    }
+
+
+
+}
 
 void loading()
 {
@@ -4024,6 +4666,17 @@ void searchHistory()
     cord(83,3);
     printf("Find: ");
 
+
+}
+
+
+void goPrev()
+{
+
+}
+
+void goFrwd()
+{
 
 }
 
