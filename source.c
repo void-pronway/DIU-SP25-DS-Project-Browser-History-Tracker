@@ -4555,7 +4555,7 @@ void yt()
 
 
 
-    //taking choice
+    //asking choice
     char url[50];
     int choice;
     cord(108,3);
