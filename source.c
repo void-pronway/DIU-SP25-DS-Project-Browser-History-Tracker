@@ -12,7 +12,7 @@ typedef struct history{
     int order;
     char url[50];
     char urlName[50];
-    char tnstr[20];
+    char tmstr[20];
     time_t  s;
     struct history *prev;
     struct history *next;
@@ -27,6 +27,7 @@ void search();
 void homePage();
 void searchPage(char *url);
 void menuPage();
+void menuDesign();
 void allHistory();
 void deleteAllHistory();
 void searchHistory();
@@ -644,6 +645,35 @@ void homePage()
 void menuPage()
 {
     system("cls");
+    menuDesign();
+
+    int choiceMenu;
+    cord(37,3);
+    printf("Enter your choice here : ");
+    scanf("%d",&choiceMenu);
+
+    switch(choiceMenu){
+    case 1:
+        homePage();
+        break;
+    case 2:
+        allHistory();
+        break;
+    case 3:
+        deleteAllHistory();
+        break;
+    case 4:
+        searchHistory();
+        break;
+    default:
+        system("cls");
+        error();
+    }
+
+}
+
+void menuDesign()
+{
     box();
 
     //1st
@@ -807,7 +837,6 @@ void menuPage()
     cord(11,27); printf(MAG"(4)");
 
     //choice
-    int choiceMenu;
 
     cord(20,2);
     printf(CYN"%c",218);
@@ -861,30 +890,6 @@ void menuPage()
     printf("%c",179);
     cord(20,26);
     printf("%c"reset,179);
-
-
-
-
-
-    cord(37,3);
-    printf("Enter your choice here : ");
-    scanf("%d",&choiceMenu);
-
-    switch(choiceMenu){
-    case 1:
-        homePage();
-        break;
-    case 2:
-        allHistory();
-        break;
-    case 3:
-        deleteAllHistory();
-        break;
-    case 4:
-        searchHistory();
-    default:
-        printf("Invalid");
-    }
 
 
 
@@ -3927,18 +3932,98 @@ void yt()
 }
 
 
+void loading()
+{
+
+    int dotCount = 5;
+    int loopCount = 2;
+
+    for (int loop = 0; loop < loopCount; loop++)
+    {
+        for (int i = 0; i <= dotCount; i++)
+        {
+            cord(58,15);
+            printf(GRN"Working on it");
+            for (int j = 0; j < i; j++)
+            {
+                printf(".");
+            }
+
+            Sleep(100);
+        }
+        cord(58,15);
+        printf("Working on it      ");
+
+        Sleep(100);
+    }
+    cord(58,15);
+    printf("                                           "reset);
+
+
+}
+
 void allHistory()
 {
+    menuDesign();
+
+    cord(21,6);
+    printf(WHT BLUB" %-37s %-42s %-15s","Website Name","Webpage URL","Time Visited "reset);
+
+
+    cord(56,27);
+    printf(CYN"Press any key to continue"reset);
+    getch();
+    menuPage();
+
 
 }
 
 void deleteAllHistory()
 {
+    menuDesign();
+
+    loading();
+    cord(55,15);
+    printf(BRED"All History Have Been Purged");
+    cord(56,27);
+    printf(CYN"Press any key to continue"reset);
+    getch();
+    menuPage();
 
 }
 
+
 void searchHistory()
 {
+    menuDesign();
+
+    cord(81,2);
+    printf(CYN"%c",218);
+
+    for(int i=0;i<32;i++){
+        printf("%c",196);
+    }
+
+    cord(114,2);
+    printf("%c",191);
+    cord(114,3);
+    printf("%c",179);
+    cord(114,4);
+    printf("%c",217);
+
+    cord(82,4);
+    for(int i=0;i<32;i++){
+        printf("%c",196);
+    }
+
+    cord(81,4);
+    printf("%c",192);
+    cord(81,3);
+    printf("%c"reset,179);
+
+    cord(83,3);
+    printf("Find: ");
+
 
 }
 
