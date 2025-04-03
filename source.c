@@ -4,7 +4,7 @@
 #include<windows.h>
 #include<conio.h>
 #include "colors.h"
-#define maxHistory 10
+#define maxHistory 5
 
 
 
@@ -13,15 +13,24 @@ typedef struct history{
     char url[50];
     char urlName[50];
     char tmstr[20];
-    time_t  s;
+    time_t  tm;
     struct history *prev;
     struct history *next;
 }node;
 
+node *head=NULL;
+node *tail=NULL;
+node *current=NULL;
+int historyCount=0;
+
 //function for DLL
-void insert();
+void insert(node *head, char urlname[],char url[]);
 void del();
 void search();
+//int nodeCount();
+void goPrev();
+void goFrwd();
+void printAll();
 
 //function prototype for our program
 void homePage();
@@ -31,10 +40,6 @@ void menuDesign();
 void allHistory();
 void deleteAllHistory();
 void searchHistory();
-void goPrev();
-void goFrwd();
-void loadfromfile();
-void savetofile();
 void start();
 void end();
 void loading();
@@ -61,9 +66,8 @@ void gmail();  //mashfiq
 int main()
 {
     char continueChoice;
-    //int choice;
+
     start();
-    loadFromFile();
 
     usleep(1000000);
 
@@ -105,7 +109,6 @@ void print_ByteSurf() {
     cord(38,10);
     printf("       |___/                                 "reset);
 }
-
 
 void start()
 {
@@ -243,12 +246,6 @@ void end()
         Sleep(300);
     }
     system("cls");
-}
-
-void loadFromFile()
-{
-
-
 }
 
 void box()//inside width 111
@@ -594,24 +591,38 @@ void homePage()
             }
             else if(strcmp(url,"diu.edu.bd")==0){              // insert func er kaaj baki ekhane
                 diu();
+                insert(head,"DIU",url);
+
             }
             else if(strcmp(url,"elearn.daffodilvarsity.edu.bd")==0){
                 blc();
+                insert(head,"BLC",url);
+
             }
             else if(strcmp(url,"codeforces.com")==0){
                 cf();
+                insert(head,"CodeForces",url);
+
             }
             else if(strcmp(url,"facebook.com")==0){
                 fb();
+                insert(head,"Facebook",url);
+
             }
             else if(strcmp(url,"youtube.com")==0){
                 yt();
+                insert(head,"Youtube",url);
+
             }
             else if(strcmp(url,"x.com")==0){
                 x();
+                insert(head,"X",url);
+
             }
             else if(strcmp(url,"gmail.com")==0){
                 gmail();
+                insert(head,"Gmail",url);
+
             }
             else{
                 error_p();
@@ -1354,7 +1365,6 @@ void diu()
 
 
 }
-
 
 void cf()
 {
@@ -2281,7 +2291,6 @@ void blc()
 
 }
 
-
 void error_p()
 {
     system("cls");
@@ -2823,7 +2832,6 @@ void fb()
 
 }
 
-
 void gmail()
 {
     system("cls");
@@ -3254,7 +3262,6 @@ void gmail()
 
 
 }
-
 
 
 void x()
@@ -3923,8 +3930,6 @@ void x()
 
 
 }
-
-
 
 void yt()
 {
@@ -4611,6 +4616,7 @@ void allHistory()
     cord(21,6);
     printf(WHT BLUB" %-37s %-42s %-15s","Website Name","Webpage URL","Time Visited "reset);
 
+    printAll(head);
 
     cord(56,27);
     printf(CYN"Press any key to continue"reset);
@@ -4667,8 +4673,10 @@ void searchHistory()
     printf("Find: ");
 
 
-}
 
+
+
+}
 
 void goPrev()
 {
@@ -4679,5 +4687,99 @@ void goFrwd()
 {
 
 }
+
+void insert(node *head, char urlname[],char url[])
+{
+    if(historyCount>=maxHistory){
+        del(head);
+    }
+
+    node *newnode=(node*)malloc(sizeof(node));
+    strcpy(newnode->urlName,urlname);
+    strcpy(newnode->url,url);
+    time(&newnode->tm);
+    struct tm* local=localtime(&newnode->tm);
+    strftime(newnode->tmstr,sizeof(newnode->tmstr),"%a %I:%M:%S %p",local);
+    newnode->next=NULL;
+    newnode->prev=NULL;
+
+
+    if(head==NULL){
+        newnode->prev=NULL;
+        head=newnode;
+        tail=newnode;
+        current=newnode;
+    }else{
+        tail->next=newnode;
+        newnode->prev=tail;
+        tail=newnode;
+        current=tail;
+    }
+
+    historyCount++;
+}
+
+void del()
+{
+
+}
+
+void printAll(node *head)
+{
+    //menuDesign();
+    system("cls");
+    printf("%d\n",historyCount);
+
+    if(head==NULL){
+        //cord(50,15);
+        printf("Empty");
+
+    }
+
+    node *ptr=tail;
+    while(ptr!=NULL){
+        printf("\t\t\t\t%-37s %-42s %-15s",
+              ptr->urlName,
+              ptr->url,
+              ptr->tmstr);
+        ptr=ptr->prev;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

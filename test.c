@@ -54,7 +54,7 @@ int main() {
             scanf("%c", &sec);
             getchar();
             insert(&start, name, id, sec);
-            // Set current to the newly added node
+
             current = start;
             while(current->next != NULL) current = current->next;
             break;
