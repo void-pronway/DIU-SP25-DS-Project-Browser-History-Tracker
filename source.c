@@ -24,7 +24,7 @@ node *current=NULL;
 int historyCount=0;
 
 //function for DLL
-void insert(node *head, char urlname[],char url[]);
+void insert(char urlname[],char url[]);
 void del();
 void search();
 //int nodeCount();
@@ -590,38 +590,38 @@ void homePage()
                 homePage();
             }
             else if(strcmp(url,"diu.edu.bd")==0){              // insert func er kaaj baki ekhane
+                insert("DIU",url);
                 diu();
-                insert(head,"DIU",url);
 
             }
             else if(strcmp(url,"elearn.daffodilvarsity.edu.bd")==0){
+                insert("BLC",url);
                 blc();
-                insert(head,"BLC",url);
 
             }
             else if(strcmp(url,"codeforces.com")==0){
+                insert("CodeForces",url);
                 cf();
-                insert(head,"CodeForces",url);
 
             }
             else if(strcmp(url,"facebook.com")==0){
+                insert("Facebook",url);
                 fb();
-                insert(head,"Facebook",url);
 
             }
             else if(strcmp(url,"youtube.com")==0){
+                insert("Youtube",url);
                 yt();
-                insert(head,"Youtube",url);
 
             }
             else if(strcmp(url,"x.com")==0){
+                insert("X",url);
                 x();
-                insert(head,"X",url);
 
             }
             else if(strcmp(url,"gmail.com")==0){
+                insert("Gmail",url);
                 gmail();
-                insert(head,"Gmail",url);
 
             }
             else{
@@ -966,7 +966,7 @@ int continueP(char *x)
     }
 }
 
-void diu()
+void diu() //done
 {
     system("cls");
     box();
@@ -1320,30 +1320,37 @@ void diu()
         }
         else if(strcmp(url,"diu.edu.bd")==0)               // insert func er kaaj baki ekhane
         {
+             insert("DIU",url);
             diu();
         }
         else if(strcmp(url,"elearn.daffodilvarsity.edu.bd")==0)
         {
+            insert("BLC",url);
             blc();
         }
         else if(strcmp(url,"codeforces.com")==0)
         {
+            insert("CodeForces",url);
             cf();
         }
         else if(strcmp(url,"facebook.com")==0)
         {
+            insert("Facebook",url);
             fb();
         }
         else if(strcmp(url,"youtube.com")==0)
         {
+            insert("Youtube",url);
             yt();
         }
         else if(strcmp(url,"x.com")==0)
         {
+            insert("X",url);
             x();
         }
         else if(strcmp(url,"gmail.com")==0)
         {
+            insert("Gmail",url);
             gmail();
         }
         else
@@ -1351,7 +1358,6 @@ void diu()
             error_p();
             break;
         }
-        break;
         break;
     case 4:
         menuPage();
@@ -1366,7 +1372,7 @@ void diu()
 
 }
 
-void cf()
+void cf() //done
 {
     system("cls");
     box();
@@ -1785,30 +1791,37 @@ void cf()
         }
         else if(strcmp(url,"diu.edu.bd")==0)               // insert func er kaaj baki ekhane
         {
+             insert("DIU",url);
             diu();
         }
         else if(strcmp(url,"elearn.daffodilvarsity.edu.bd")==0)
         {
+            insert("BLC",url);
             blc();
         }
         else if(strcmp(url,"codeforces.com")==0)
         {
+            insert("CodeForces",url);
             cf();
         }
         else if(strcmp(url,"facebook.com")==0)
         {
+            insert("Facebook",url);
             fb();
         }
         else if(strcmp(url,"youtube.com")==0)
         {
+            insert("Youtube",url);
             yt();
         }
         else if(strcmp(url,"x.com")==0)
         {
+            insert("X",url);
             x();
         }
         else if(strcmp(url,"gmail.com")==0)
         {
+            insert("Gmail",url);
             gmail();
         }
         else
@@ -1816,7 +1829,6 @@ void cf()
             error_p();
             break;
         }
-        break;
         break;
     case 4:
         menuPage();
@@ -1831,7 +1843,7 @@ void cf()
 
 }
 
-void blc()
+void blc() //done
 {
 
 
@@ -2245,30 +2257,37 @@ void blc()
         }
         else if(strcmp(url,"diu.edu.bd")==0)               // insert func er kaaj baki ekhane
         {
+             insert("DIU",url);
             diu();
         }
         else if(strcmp(url,"elearn.daffodilvarsity.edu.bd")==0)
         {
+            insert("BLC",url);
             blc();
         }
         else if(strcmp(url,"codeforces.com")==0)
         {
+            insert("CodeForces",url);
             cf();
         }
         else if(strcmp(url,"facebook.com")==0)
         {
+            insert("Facebook",url);
             fb();
         }
         else if(strcmp(url,"youtube.com")==0)
         {
+            insert("Youtube",url);
             yt();
         }
         else if(strcmp(url,"x.com")==0)
         {
+            insert("X",url);
             x();
         }
         else if(strcmp(url,"gmail.com")==0)
         {
+            insert("Gmail",url);
             gmail();
         }
         else
@@ -2276,7 +2295,6 @@ void blc()
             error_p();
             break;
         }
-        break;
         break;
     case 4:
         menuPage();
@@ -2339,7 +2357,7 @@ void error()
 
 }
 
-void fb()
+void fb() //done
 {
     system("cls");
     box();
@@ -2787,30 +2805,37 @@ void fb()
         }
         else if(strcmp(url,"diu.edu.bd")==0)               // insert func er kaaj baki ekhane
         {
+             insert("DIU",url);
             diu();
         }
         else if(strcmp(url,"elearn.daffodilvarsity.edu.bd")==0)
         {
+            insert("BLC",url);
             blc();
         }
         else if(strcmp(url,"codeforces.com")==0)
         {
+            insert("CodeForces",url);
             cf();
         }
         else if(strcmp(url,"facebook.com")==0)
         {
+            insert("Facebook",url);
             fb();
         }
         else if(strcmp(url,"youtube.com")==0)
         {
+            insert("Youtube",url);
             yt();
         }
         else if(strcmp(url,"x.com")==0)
         {
+            insert("X",url);
             x();
         }
         else if(strcmp(url,"gmail.com")==0)
         {
+            insert("Gmail",url);
             gmail();
         }
         else
@@ -2832,7 +2857,7 @@ void fb()
 
 }
 
-void gmail()
+void gmail() //done
 {
     system("cls");
     box();
@@ -3218,30 +3243,37 @@ void gmail()
         }
         else if(strcmp(url,"diu.edu.bd")==0)               // insert func er kaaj baki ekhane
         {
+             insert("DIU",url);
             diu();
         }
         else if(strcmp(url,"elearn.daffodilvarsity.edu.bd")==0)
         {
+            insert("BLC",url);
             blc();
         }
         else if(strcmp(url,"codeforces.com")==0)
         {
+            insert("CodeForces",url);
             cf();
         }
         else if(strcmp(url,"facebook.com")==0)
         {
+            insert("Facebook",url);
             fb();
         }
         else if(strcmp(url,"youtube.com")==0)
         {
+            insert("Youtube",url);
             yt();
         }
         else if(strcmp(url,"x.com")==0)
         {
+            insert("X",url);
             x();
         }
         else if(strcmp(url,"gmail.com")==0)
         {
+            insert("Gmail",url);
             gmail();
         }
         else
@@ -3263,8 +3295,7 @@ void gmail()
 
 }
 
-
-void x()
+void x() //done
 {
 
     system("cls");
@@ -3886,30 +3917,37 @@ void x()
         }
         else if(strcmp(url,"diu.edu.bd")==0)               // insert func er kaaj baki ekhane
         {
+             insert("DIU",url);
             diu();
         }
         else if(strcmp(url,"elearn.daffodilvarsity.edu.bd")==0)
         {
+            insert("BLC",url);
             blc();
         }
         else if(strcmp(url,"codeforces.com")==0)
         {
+            insert("CodeForces",url);
             cf();
         }
         else if(strcmp(url,"facebook.com")==0)
         {
+            insert("Facebook",url);
             fb();
         }
         else if(strcmp(url,"youtube.com")==0)
         {
+            insert("Youtube",url);
             yt();
         }
         else if(strcmp(url,"x.com")==0)
         {
+            insert("X",url);
             x();
         }
         else if(strcmp(url,"gmail.com")==0)
         {
+            insert("Gmail",url);
             gmail();
         }
         else
@@ -3931,7 +3969,7 @@ void x()
 
 }
 
-void yt()
+void yt() //done
 {
     system("cls");
     box();
@@ -4532,30 +4570,37 @@ void yt()
         }
         else if(strcmp(url,"diu.edu.bd")==0)               // insert func er kaaj baki ekhane
         {
+             insert("DIU",url);
             diu();
         }
         else if(strcmp(url,"elearn.daffodilvarsity.edu.bd")==0)
         {
+            insert("BLC",url);
             blc();
         }
         else if(strcmp(url,"codeforces.com")==0)
         {
+            insert("CodeForces",url);
             cf();
         }
         else if(strcmp(url,"facebook.com")==0)
         {
+            insert("Facebook",url);
             fb();
         }
         else if(strcmp(url,"youtube.com")==0)
         {
+            insert("Youtube",url);
             yt();
         }
         else if(strcmp(url,"x.com")==0)
         {
+            insert("X",url);
             x();
         }
         else if(strcmp(url,"gmail.com")==0)
         {
+            insert("Gmail",url);
             gmail();
         }
         else
@@ -4563,7 +4608,6 @@ void yt()
             error_p();
             break;
         }
-        break;
         break;
     case 4:
         menuPage();
@@ -4616,7 +4660,7 @@ void allHistory()
     cord(21,6);
     printf(WHT BLUB" %-37s %-42s %-15s","Website Name","Webpage URL","Time Visited "reset);
 
-    printAll(head);
+    printAll();
 
     cord(56,27);
     printf(CYN"Press any key to continue"reset);
@@ -4688,35 +4732,45 @@ void goFrwd()
 
 }
 
-void insert(node *head, char urlname[],char url[])
+void insert(char urlname[],char url[])
 {
     if(historyCount>=maxHistory){
         del(head);
     }
 
-    node *newnode=(node*)malloc(sizeof(node));
-    strcpy(newnode->urlName,urlname);
-    strcpy(newnode->url,url);
-    time(&newnode->tm);
-    struct tm* local=localtime(&newnode->tm);
-    strftime(newnode->tmstr,sizeof(newnode->tmstr),"%a %I:%M:%S %p",local);
-    newnode->next=NULL;
-    newnode->prev=NULL;
 
 
     if(head==NULL){
+        node *newnode=(node*)malloc(sizeof(node));
+        strcpy(newnode->urlName,urlname);
+        strcpy(newnode->url,url);
+        time(&newnode->tm);
+        struct tm* local=localtime(&newnode->tm);
+        strftime(newnode->tmstr,sizeof(newnode->tmstr),"%a %I:%M:%S %p",local);
+        newnode->next=NULL;
         newnode->prev=NULL;
+
         head=newnode;
         tail=newnode;
         current=newnode;
     }else{
+        node *newnode=(node*)malloc(sizeof(node));
+        strcpy(newnode->urlName,urlname);
+        strcpy(newnode->url,url);
+        time(&newnode->tm);
+        struct tm* local=localtime(&newnode->tm);
+        strftime(newnode->tmstr,sizeof(newnode->tmstr),"%a %I:%M:%S %p",local);
+        newnode->next=NULL;
+
         tail->next=newnode;
         newnode->prev=tail;
         tail=newnode;
         current=tail;
     }
 
+
     historyCount++;
+
 }
 
 void del()
@@ -4724,25 +4778,26 @@ void del()
 
 }
 
-void printAll(node *head)
+void printAll()
 {
     //menuDesign();
     system("cls");
     printf("%d\n",historyCount);
 
+
     if(head==NULL){
         //cord(50,15);
-        printf("Empty");
-
+        printf("Empty\n");
+        //return;
     }
 
-    node *ptr=tail;
-    while(ptr!=NULL){
-        printf("\t\t\t\t%-37s %-42s %-15s",
-              ptr->urlName,
-              ptr->url,
-              ptr->tmstr);
-        ptr=ptr->prev;
+    node *temp=tail;
+    while(temp!=NULL){
+        printf("\t\t%-37s %-42s %-15s\n",
+              temp->urlName,
+              temp->url,
+              temp->tmstr);
+        temp=temp->prev;
     }
 
 }
