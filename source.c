@@ -4738,10 +4738,7 @@ void insert(char urlname[],char url[])
         del(head);
     }
 
-
-
-    if(head==NULL){
-        node *newnode=(node*)malloc(sizeof(node));
+    node *newnode=(node*)malloc(sizeof(node));
         strcpy(newnode->urlName,urlname);
         strcpy(newnode->url,url);
         time(&newnode->tm);
@@ -4750,24 +4747,17 @@ void insert(char urlname[],char url[])
         newnode->next=NULL;
         newnode->prev=NULL;
 
+
+    if(head==NULL){
         head=newnode;
         tail=newnode;
         current=newnode;
     }else{
-        node *newnode=(node*)malloc(sizeof(node));
-        strcpy(newnode->urlName,urlname);
-        strcpy(newnode->url,url);
-        time(&newnode->tm);
-        struct tm* local=localtime(&newnode->tm);
-        strftime(newnode->tmstr,sizeof(newnode->tmstr),"%a %I:%M:%S %p",local);
-        newnode->next=NULL;
-
         tail->next=newnode;
         newnode->prev=tail;
         tail=newnode;
         current=tail;
     }
-
 
     historyCount++;
 
@@ -4780,24 +4770,23 @@ void del()
 
 void printAll()
 {
-    //menuDesign();
-    system("cls");
-    printf("%d\n",historyCount);
-
-
+    menuDesign();
     if(head==NULL){
         //cord(50,15);
         printf("Empty\n");
         //return;
     }
 
+    int y=8;
     node *temp=tail;
     while(temp!=NULL){
-        printf("\t\t%-37s %-42s %-15s\n",
+        cord(21,y);
+        printf("%-38s %-40s %-15s\n",
               temp->urlName,
               temp->url,
               temp->tmstr);
         temp=temp->prev;
+        y+=1;
     }
 
 }
