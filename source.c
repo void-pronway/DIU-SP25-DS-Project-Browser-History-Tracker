@@ -3891,7 +3891,7 @@ void x() //done
     cord(29,23);
     printf("  Sorry we don't have enough budget");
     cord(29,24);
-    printf("  to show yoy the picture...");
+    printf("  to show you the picture...");
 
 
 
@@ -3915,7 +3915,7 @@ void x() //done
         {
             homePage();
         }
-        else if(strcmp(url,"diu.edu.bd")==0)               // insert func er kaaj baki ekhane
+        else if(strcmp(url,"diu.edu.bd")==0)
         {
              insert("DIU",url);
             diu();
