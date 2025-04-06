@@ -4786,16 +4786,10 @@ void printAll()
               temp->url,
               temp->tmstr);
         temp=temp->prev;
-        y+=1;
+        y++;
     }
 
 }
-
-
-
-
-
-
 
 
 
