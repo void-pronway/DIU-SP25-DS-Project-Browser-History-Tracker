@@ -26,6 +26,7 @@ int historyCount=0;
 //function for DLL
 void insert(char urlname[],char url[]);
 void del();
+void delall();
 void search();
 //int nodeCount();
 void goPrev();
@@ -630,15 +631,19 @@ void homePage()
             }
             break;
         case 2:
+            insert("Facebook","facebook.com");
             fb();
             break;
         case 3:
+            insert("BLC","elearn.daffodilvarsity.edu.bd");
             blc();
             break;
         case 4:
+            insert("DIU","diu.edu.bd");
             diu();
             break;
         case 5:
+            insert("CodeForces","codeforces.com");
             cf();
             break;
         case 6:
@@ -671,6 +676,7 @@ void menuPage()
         allHistory();
         break;
     case 3:
+        delall();
         deleteAllHistory();
         break;
     case 4:
@@ -4684,7 +4690,6 @@ void deleteAllHistory()
 
 }
 
-
 void searchHistory()
 {
     menuDesign();
@@ -4724,7 +4729,25 @@ void searchHistory()
 
 void goPrev()
 {
-
+    node *ptr;
+    if(current->prev==NULL){
+        homePage();
+    }
+    if(strcmp(current->prev->urlName,"Facebook")==0){
+        fb();
+    }else if(strcmp(current->prev->urlName,"DIU")==0){
+        diu();
+    }else if(strcmp(current->prev->urlName,"CodeForces")==0){
+        cf();
+    }else if(strcmp(current->prev->urlName,"BLC")==0){
+        blc();
+    }else if(strcmp(current->prev->urlName,"Youtube")==0){
+        yt();
+    }else if(strcmp(current->prev->urlName,"X")==0){
+        x();
+    }else if(strcmp(current->prev->urlName,"Gmail")==0){
+        gmail();
+    }
 }
 
 void goFrwd()
@@ -4763,9 +4786,29 @@ void insert(char urlname[],char url[])
 
 }
 
-void del()
+void del(node *head)
 {
+    node *ptr=head;
+    head=head->next;
+    head->prev=NULL;
+    ptr->next=NULL;
+    free(ptr);
+}
 
+void delall()
+{
+    node *ptr=tail;
+    current=NULL;
+    while(ptr!=head){
+        tail=ptr->prev;
+        free(ptr);
+        ptr=tail;
+
+    }
+    tail=NULL;
+    head=NULL;
+    free(ptr);
+    historyCount=0;
 }
 
 void printAll()
