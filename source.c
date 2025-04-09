@@ -4,7 +4,7 @@
 #include<windows.h>
 #include<conio.h>
 #include "colors.h"
-#define maxHistory 5
+#define maxHistory 15
 
 
 
@@ -28,7 +28,7 @@ void insert(char urlname[],char url[]);
 void del();
 void delall();
 void search();
-//int nodeCount();
+void currentPage();
 void goPrev();
 void goFrwd();
 void printAll();
@@ -4727,27 +4727,40 @@ void searchHistory()
 
 }
 
-void goPrev()
+void currentPage()
 {
-    node *ptr;
-    if(current->prev==NULL){
-        homePage();
-    }
-    if(strcmp(current->prev->urlName,"Facebook")==0){
-        fb();
-    }else if(strcmp(current->prev->urlName,"DIU")==0){
+    system("cls");
+    box();
+
+    if(strcmp(current->url,"diu.edu.bd")==0){
         diu();
-    }else if(strcmp(current->prev->urlName,"CodeForces")==0){
-        cf();
-    }else if(strcmp(current->prev->urlName,"BLC")==0){
+    }else if(strcmp(current->url,"elearn.daffodilvarsity.edu.bd")==0){
         blc();
-    }else if(strcmp(current->prev->urlName,"Youtube")==0){
+    }else if(strcmp(current->url,"codeforces.com")==0){
+        cf();
+    }else if(strcmp(current->url,"facebook.com")==0){
+        fb();
+    }else if(strcmp(current->url,"youtube.com")==0){
         yt();
-    }else if(strcmp(current->prev->urlName,"X")==0){
+    }else if(strcmp(current->url,"x.com")==0){
         x();
-    }else if(strcmp(current->prev->urlName,"Gmail")==0){
+    }else if(strcmp(current->url,"gmail.com")==0){
         gmail();
     }
+
+    time(&current->tm);
+    struct tm* local=localtime(&current->tm);
+    strftime(current->tm,sizeof(current->tm),"%a %I:%M:%S %p",local);
+}
+
+void goPrev()
+{
+    if(current->prev==NULL){
+        return;
+    }
+
+    current=current->prev;
+    currentPage();
 }
 
 void goFrwd()
