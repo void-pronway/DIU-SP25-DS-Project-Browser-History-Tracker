@@ -133,14 +133,7 @@ void end()
 {
     system("cls");
     box();
-    cord(50,13);
-    for (int i = 0; i <= 100; i += 10)
-    {
-        printf("\r\t\t\t\t\t      "GRN"Saving surf history...%d%%"reset, i);
-        usleep(200000); //200000 microseconds = 200 milisec = 0.2 sec
-    }
-    system("cls");
-    box();
+
     cord(5,14);
     usleep(300000);
     printf(CYN"\t\t\t\t\t    T ");
@@ -410,6 +403,7 @@ void searchPage(char *url)
     printf(BLK WHTB" Type your URL here "reset);
     printf(BBLU"");
     cord(31,13);
+    printf("www.");
     scanf("%s",url);
 
 
@@ -578,7 +572,29 @@ void homePage()
     printf("%c"reset,179);
 
     cord(103,26);
+   printf("7. Exit");
+
+    cord(10,26);
     printf("6. Menu");
+    cord(6,25);
+    printf(CYN"%c",218);
+    for(int i=0;i<15;i++){
+        printf("%c",196);
+    }
+
+    cord(6,27);
+    printf("%c",192);
+    for(int i=0;i<15;i++){
+        printf("%c",196);
+    }
+    cord(22,25);
+    printf("%c",191);
+    cord(22,27);
+    printf("%c",217);
+    cord(22,26);
+    printf("%c",179);
+    cord(6,26);
+    printf("%c"reset,179);
 
 
     char url[50];
@@ -650,6 +666,9 @@ void homePage()
         case 6:
             menuPage();
             break;
+        case 7:
+            end();
+            exit(0);
         default:
             system("cls");
             error();
@@ -2920,7 +2939,7 @@ void gmail() //done
     printf("%c",191);
     cord(21,3);
     printf("%c"reset,179);
-    printf(" URL: ");
+    printf(" URL: gmail.com ");
     cord(21,4);
     printf(CYN"%c",192);
     for(int i = 0; i<56; i++)
@@ -3359,7 +3378,7 @@ void x() //done
     printf("%c",191);
     cord(21,3);
     printf("%c"reset,179);
-    printf(" URL: ");
+    printf(" URL: x.com ");
     cord(21,4);
     printf(CYN"%c",192);
     for(int i = 0; i<56; i++)
@@ -4032,7 +4051,7 @@ void yt() //done
     printf("%c",191);
     cord(21,3);
     printf("%c"reset,179);
-    printf(" URL: ");
+    printf(" URL: youtube.com ");
     cord(21,4);
     printf(CYN"%c",192);
     for(int i = 0; i<56; i++)
@@ -4876,34 +4895,14 @@ void delall()
     historyCount=0;
 }
 
-/*void printAll()
-{
-    menuDesign();
-    if(head==NULL){
-        //cord(50,15);
-        printf("Empty\n");
-        //return;
-    }
-
-    int y=8;
-    node *temp=tail;
-    while(temp!=NULL){
-        cord(21,y);
-        printf("%-38s %-40s %-15s\n",
-              temp->urlName,
-              temp->url,
-              temp->tmstr);
-        temp=temp->prev;
-        y++;
-    }
-
-}*/
 
 void printAll() {
     menuDesign();
     if (head == NULL) {
-        printf("Empty");
+        cord(60,15);
+        printf(BRED"History is empty!"reset);
         return;
+
     }
 
     // Bubble sort for recentr time to oldest time
