@@ -4799,7 +4799,11 @@ void goPrev()
     strftime(current->tmstr,sizeof(current->tmstr),"%a %I:%M:%S %p",local);
 
     free(newtemp);
-
+    ptr=ptr->prev;
+    if(ptr==NULL){
+        homePage();
+    }
+    prevCount++;
 
     if(strcmp(current->url,"diu.edu.bd")==0){
         diu();
@@ -4817,11 +4821,7 @@ void goPrev()
         gmail();
     }
 
-    ptr=ptr->prev;
-    if(ptr==NULL){
-        homePage();
-    }
-    prevCount++;
+
 }
 
 void goFrwd()
