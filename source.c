@@ -4906,7 +4906,8 @@ void printAll() {
         return;
     }
 
-    // Sort from most recent to oldest before printing
+    // Bubble sort for recentr time to oldest time
+
     node *temp = head;
     for (node *i = head; i != NULL; i = i->next) {
         for (node *j = i->next; j != NULL; j = j->next) {
@@ -4932,6 +4933,7 @@ void printAll() {
             }
         }
     }
+
 
     int y = 8;
     temp = head;
