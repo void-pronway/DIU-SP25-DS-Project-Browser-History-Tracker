@@ -4728,105 +4728,60 @@ void searchHistory()
 
 }
 
-/*void currentPage()
+void currentPage(node *ptr)
 {
     system("cls");
     box();
 
-    if(strcmp(current->url,"diu.edu.bd")==0){
+    if(strcmp(ptr->url,"diu.edu.bd")==0){
         diu();
-    }else if(strcmp(current->url,"elearn.daffodilvarsity.edu.bd")==0){
+    }else if(strcmp(ptr->url,"elearn.daffodilvarsity.edu.bd")==0){
         blc();
-    }else if(strcmp(current->url,"codeforces.com")==0){
+    }else if(strcmp(ptr->url,"codeforces.com")==0){
         cf();
-    }else if(strcmp(current->url,"facebook.com")==0){
+    }else if(strcmp(ptr->url,"facebook.com")==0){
         fb();
-    }else if(strcmp(current->url,"youtube.com")==0){
+    }else if(strcmp(ptr->url,"youtube.com")==0){
         yt();
-    }else if(strcmp(current->url,"x.com")==0){
+    }else if(strcmp(ptr->url,"x.com")==0){
         x();
-    }else if(strcmp(current->url,"gmail.com")==0){
+    }else if(strcmp(ptr->url,"gmail.com")==0){
         gmail();
     }
 
     time(&current->tm);
     struct tm* local=localtime(&current->tm);
     strftime(current->tm,sizeof(current->tm),"%a %I:%M:%S %p",local);
-}*/
+}
 
 void goPrev()
 {
-
     if(current->prev==NULL){
         homePage();
+    }else{
+        current=current->prev;
+
+        time(&current->tm);
+        struct tm* local=localtime(&current->tm);
+        strftime(current->tmstr,sizeof(current->tmstr),"%a %I:%M:%S %p",local);
+
+        currentPage(current);
     }
-
-    node *ptr=current->prev;
-    node *temp=ptr;
-    node *trv=current;
-
-    int trvcount=prevCount;
-    while(trvcount>0){
-        trv=trv->prev;
-        trvcount--;
-    }
-
-    node *newtemp=(node*)malloc(sizeof(node));
-    strcpy(newtemp->urlName,temp->urlName);
-    strcpy(newtemp->url,temp->url);
-    time(&newtemp->tm);
-    struct tm* local=localtime(&newtemp->tm);
-    strftime(newtemp->tmstr,sizeof(newtemp->tmstr),"%a %I:%M:%S %p",local);
-    newtemp->next=NULL;
-    newtemp->prev=NULL;
-
-    strcpy(temp->urlName,trv->urlName);
-    strcpy(temp->url,trv->url);
-    time(&temp->tm);
-    local=localtime(&temp->tm);
-    strftime(temp->tmstr,sizeof(temp->tmstr),"%a %I:%M:%S %p",local);
-
-    strcpy(trv->urlName,current->urlName);
-    strcpy(trv->url,current->url);
-    time(&trv->tm);
-    local=localtime(&trv->tm);
-    strftime(trv->tmstr,sizeof(trv->tmstr),"%a %I:%M:%S %p",local);
-
-    strcpy(current->urlName,newtemp->urlName);
-    strcpy(current->url,newtemp->url);
-    time(&current->tm);
-    local=localtime(&current->tm);
-    strftime(current->tmstr,sizeof(current->tmstr),"%a %I:%M:%S %p",local);
-
-    free(newtemp);
-    ptr=ptr->prev;
-    if(ptr==NULL){
-        homePage();
-    }
-    prevCount++;
-
-    if(strcmp(current->url,"diu.edu.bd")==0){
-        diu();
-    }else if(strcmp(current->url,"elearn.daffodilvarsity.edu.bd")==0){
-        blc();
-    }else if(strcmp(current->url,"codeforces.com")==0){
-        cf();
-    }else if(strcmp(current->url,"facebook.com")==0){
-        fb();
-    }else if(strcmp(current->url,"youtube.com")==0){
-        yt();
-    }else if(strcmp(current->url,"x.com")==0){
-        x();
-    }else if(strcmp(current->url,"gmail.com")==0){
-        gmail();
-    }
-
-
 }
 
 void goFrwd()
 {
+    if(current->next==NULL){
+        homePage();
+    }else{
+        current=current->next;
 
+        time(&current->tm);
+        struct tm* local=localtime(&current->tm);
+        strftime(current->tmstr,sizeof(current->tmstr),"%a %I:%M:%S %p",local);
+
+        currentPage(current);
+    }
 }
 
 void insert(char urlname[],char url[])
@@ -4885,7 +4840,7 @@ void delall()
     historyCount=0;
 }
 
-void printAll()
+/*void printAll()
 {
     menuDesign();
     if(head==NULL){
@@ -4906,6 +4861,50 @@ void printAll()
         y++;
     }
 
+}*/
+
+void printAll() {
+    menuDesign();
+    if (head == NULL) {
+        printf("Empty");
+        return;
+    }
+
+    // Sort from most recent to oldest before printing
+    node *temp = head;
+    for (node *i = head; i != NULL; i = i->next) {
+        for (node *j = i->next; j != NULL; j = j->next) {
+            if (difftime(i->tm, j->tm) < 0) {
+                // Swap entire contents
+                char tempUrl[100], tempName[50], tempTime[50];
+                time_t tempTm;
+
+                strcpy(tempUrl, i->url);
+                strcpy(tempName, i->urlName);
+                strcpy(tempTime, i->tmstr);
+                tempTm = i->tm;
+
+                strcpy(i->url, j->url);
+                strcpy(i->urlName, j->urlName);
+                strcpy(i->tmstr, j->tmstr);
+                i->tm = j->tm;
+
+                strcpy(j->url, tempUrl);
+                strcpy(j->urlName, tempName);
+                strcpy(j->tmstr, tempTime);
+                j->tm = tempTm;
+            }
+        }
+    }
+
+    int y = 8;
+    temp = head;
+    while (temp != NULL) {
+        cord(21, y);
+        printf("%-38s %-40s %-15s\n", temp->urlName, temp->url, temp->tmstr);
+        temp = temp->next;
+        y++;
+    }
 }
 
 
