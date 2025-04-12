@@ -4691,42 +4691,78 @@ void deleteAllHistory()
 
 }
 
-void searchHistory()
-{
+void searchHistory() {
+    system("cls");
     menuDesign();
 
+    // Draw search box
     cord(81,2);
     printf(CYN"%c",218);
-
-    for(int i=0;i<32;i++){
+    for(int i=0; i<32; i++) {
         printf("%c",196);
     }
-
+    printf("%c",191);
     cord(114,2);
     printf("%c",191);
     cord(114,3);
     printf("%c",179);
     cord(114,4);
     printf("%c",217);
-
     cord(82,4);
-    for(int i=0;i<32;i++){
+    for(int i=0; i<32; i++) {
         printf("%c",196);
     }
-
     cord(81,4);
     printf("%c",192);
     cord(81,3);
     printf("%c"reset,179);
 
+    cord(37,3);
+    printf("Enter your choice here : 4");
+
     cord(83,3);
     printf("Find: ");
 
+    //search query
+    char query[50];
+    cord(89,3);
+    scanf("%49s", query);
 
 
+    cord(21,6);
+    printf(WHT BLUB" %-37s %-42s %-15s","Website Name","Webpage URL","Time Visited "reset);
 
+    node *temp = tail;
+    int found = 0;
+    int y = 8;
 
+    // Search both name and URL
+    while(temp != NULL) {
+        if(strstr(temp->urlName, query) || strstr(temp->url, query)) {
+            cord(21, y);
+            printf("%-38s %-40s %-15s\n",
+                  temp->urlName,
+                  temp->url,
+                  temp->tmstr);
+            y++;
+            found = 1;
+        }
+        temp = temp->prev;
+    }
+
+    if(!found) {
+        cord(55, 15);
+        printf(RED"No matches found for: %s"reset, query);
+    }
+
+    cord(56,27);
+    printf(CYN"Press any key to continue"reset);
+    getch();
+    menuPage();
 }
+
+
+
 
 void currentPage(node *ptr)
 {
