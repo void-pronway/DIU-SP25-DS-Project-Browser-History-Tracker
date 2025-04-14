@@ -22,14 +22,12 @@ node *head=NULL;
 node *tail=NULL;
 node *current=NULL;
 int historyCount=0;
-int prevCount=0;
 
 //function for DLL
 void insert(char urlname[],char url[]);
 void del();
 void delall();
 void search();
-//void currentPage();
 void goPrev();
 void goFrwd();
 void printAll();
@@ -45,8 +43,7 @@ void searchHistory();
 void start();
 void end();
 void loading();
-void coord(int x, int y);
-void time();
+void cord(int x, int y);
 int continueP(char *x);
 void box();
 int optionChoice();
@@ -86,8 +83,7 @@ int main()
 }
 
 void cord(int x, int y)
-{
-    COORD crd;
+{   COORD crd;
     crd.X=x;
     crd.Y=y;
     SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE),crd);
@@ -607,7 +603,7 @@ void homePage()
             if(strcmp(url,"home")==0){
                 homePage();
             }
-            else if(strcmp(url,"diu.edu.bd")==0){              // insert func er kaaj baki ekhane
+            else if(strcmp(url,"diu.edu.bd")==0){
                 insert("DIU",url);
                 diu();
 
@@ -981,14 +977,16 @@ int continueP(char *x)
     else if((*x!='n'||*x!='N')&&(*x!='y'||*x!='Y')){
 
         system("cls");
-        printf("\n\n\n\n\n\n\n\n\n\n\n\t\t\t\t        Your Choice is "RED"Invalid!"reset" Choice must be "GRN"y/n"reset".\n\n");
-        printf("\n\t\t\t\t\t        Do you want to continue?\n");
-        printf("\t\t\t\t\t\t          (y/n)");
+        box();
+        cord(40,13);
+        printf("Your Choice is "RED"Invalid!"reset" Choice must be "GRN"y/n"reset".");
+        cord(50,14);
+        printf("Do you want to continue?\n");
+        cord(58,15);
+        printf("(y/n)");
         *x=getch();
 
         }
-
-
     }
 }
 
@@ -4780,9 +4778,6 @@ void searchHistory() {
     menuPage();
 }
 
-
-
-
 void currentPage(node *ptr)
 {
     system("cls");
@@ -4803,10 +4798,6 @@ void currentPage(node *ptr)
     }else if(strcmp(ptr->url,"gmail.com")==0){
         gmail();
     }
-
-    time(&current->tm);
-    struct tm* local=localtime(&current->tm);
-    strftime(current->tm,sizeof(current->tm),"%a %I:%M:%S %p",local);
 }
 
 void goPrev()
